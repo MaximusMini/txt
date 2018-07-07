@@ -1,0 +1,189 @@
+
+
+https://nix-tips.ru/yii2-polya-activeform.html
+
+
+1. Документация
+		yii\widgets\ActiveForm
+			http://www.yiiframework.com/doc-2.0/yii-widgets-activeform.html
+		
+		yii\bootstrap\ActiveForm
+			http://www.yiiframework.com/doc-2.0/yii-bootstrap-activeform.html
+		
+
+2. Использование - yii\bootstrap\ActiveForm
+		use yii\bootstrap\ActiveForm;
+		use yii\helpers\Html;
+
+		
+3. Инициализация формы в представлении
+		$form = ActiveForm::begin(); // Инициализация формы с настройками по-умолчанию
+		ActiveForm::end();
+		
+		
+		$form = ActiveForm::begin([
+				'id' => 'form-input-example',
+				'options' => [
+					'class' => 'form-horizontal col-lg-11',
+					'enctype' => 'multipart/form-data' //для возможности загрузки файлов
+				],
+			]);
+
+4. Простое текстовое поле
+		$form->field($model, 'text')->textInput()->hint('Введите любой текст')->label('Текстовое поле');
+
+5. Многострочное текстовое поле
+		$form->field($model, 'textArea')->textarea(['rows' => 2, 'cols' => 5])->label('Многострочное текстовое поле');
+		
+6. Поле для ввода пароля
+		// Простое поле ввода пароля
+		$form->field($model, 'password')->input('password');
+		
+		// Поле с подсказкой
+		$form->field($model, 'password')->passwordInput()->hint('Длинна пароля не меньше 10 символов.');
+	
+7. Поле для ввода email	
+		$form->field($model, 'email')->input('email'); // стандарт html5	
+			
+8. Загрузка файлов
+		// Одиночная загрузка
+		$form->field($model, 'fileUpload')->fileInput();
+		
+		// Загрузка нескольких файлов сразу
+		$form->field($model, 'filesUpload[]')->fileInput(['multiple' => 'multiple']);
+			
+9. Чекбоксы
+		// Одиночный чекбокс	
+		$form->field($model, 'checkbox')
+			->checkbox([
+				'label' => 'Неактивный чекбокс',
+				'labelOptions' => [
+					'style' => 'padding-left:20px;'
+				],
+				'disabled' => true
+			]);	
+		
+		// Группа чекбоксов
+		$form->field($model, 'checkboxList')
+			->checkboxList([
+				'a' => 'Элемент А',
+				'б' => 'Элемент Б',
+				'в' => 'Элемент В',
+			]);
+			
+10. Радио кнопки
+		// Одиночная радио кнопка
+		$form->field($model, 'radioButton')
+			->radio([
+				'label' => 'Радио кнопка',
+				'labelOptions' => [
+					'style' => 'padding-left:20px;'
+				]
+			]);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			

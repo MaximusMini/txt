@@ -1,0 +1,17 @@
+SQL - выборка из таблицы
+
+	Информация извлекается из таблиц при помощи команды SELECT. Вызывается она так:
+
+		SELECT what_to_select
+		FROM which_table
+		WHERE conditions_to_satisfy
+		
+			what_to_select - обозначает нужные данные
+			which_table  - указывает таблицу
+	
+	SELECT * FROM result_match WHERE
+
+		
+		
+		ORDER BY имя_столбца_сортировки 			сортировка по возростанию
+		ORDER BY имя_столбца_сортировки DESC		сортировка по убыванию

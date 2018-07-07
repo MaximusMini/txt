@@ -1,0 +1,49 @@
+wpscan --url www.revbel.cc --enumerate u --proxy 127.0.0.1:8118
+_______________________________________________________________
+        __          _______   _____                  
+        \ \        / /  __ \ / ____|                 
+         \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+          \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \ 
+           \  /\  /  | |     ____) | (__| (_| | | | |
+            \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+        WordPress Security Scanner by the WPScan Team 
+                       Version 2.9.2
+          Sponsored by Sucuri - https://sucuri.net
+   @_WPScan_, @ethicalhack3r, @erwan_lr, pvdl, @_FireFart_
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o [A]bort, default: [N]n
+[i] The remote host tried to redirect to: https://revbel.cc/
+[?] Do you want follow the redirection ? [Y]es [N]o [A]bort, default: [N]d
+[+] URL: http://www.revbel.cc/
+[+] Started: Fri Jul  7 21:57:01 2017
+
+[+] Interesting header: PROXY-CONNECTION: keep-alive
+[+] Interesting header: SERVER: nginx
+[+] Interesting header: STRICT-TRANSPORT-SECURITY: max-age=63072000; includeSubdomains
+[+] Interesting header: X-CONTENT-TYPE-OPTIONS: nosniff
+[+] Interesting header: X-FRAME-OPTIONS: DENY
+[+] XML-RPC Interface available under: http://www.revbel.cc/xmlrpc.php
+
+[+] WordPress version 4.8 (Released on 2017-06-08) identified from meta generator, links opml
+
+[+] WordPress theme in use: bitz
+
+[+] Name: bitz
+ |  Location: http://www.revbel.cc/wp-content/themes/bitz/
+ |  Style URL: http://www.revbel.cc/wp-content/themes/bitz/style.css
+ |  Referenced style.css: https://revbel.cc/wp-content/themes/bitz/style.css
+
+[+] Enumerating plugins from passive detection ...
+[+] No plugins found
+
+[+] Enumerating usernames ...
+[!] Stop User Enumeration plugin detected, results might be empty. However a bypass exists for v1.2.8 and below, see stop_user_enumeration_bypass.rb in /usr/share/wpscan
+[+] We did not enumerate any usernames
+
+[+] Finished: Fri Jul  7 21:58:39 2017
+[+] Requests Done: 97
+[+] Memory used: 22.898 MB
+[+] Elapsed time: 00:01:37

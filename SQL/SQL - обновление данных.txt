@@ -1,0 +1,18 @@
+SQL - обновление данных
+
+	Команда UPDATE выполняет изменение данных в таблицах. Она имеет очень простой формат.
+		UPDATE имя_таблицы SET
+		имя_столбца_1 = значение_1,
+		имя_столбца_2 = значение_2,
+		имя_столбца_3 = значение_3, ...
+		[WHERE условия];
+		
+	UPDATE stat_allow_puck SET name='Динамо М' WHERE id_team=8
+	UPDATE stat_faceoff SET name='Динамо М' WHERE id_team=8
+	UPDATE stat_loss SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_penalty SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_puck SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_throw SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_throw_rival SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_trow_percent SET name='Динамо М' WHERE id_team=8;
+	UPDATE stat_wins SET name='Динамо М' WHERE id_team=8;

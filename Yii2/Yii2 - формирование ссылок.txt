@@ -1,0 +1,24 @@
+Yii2 - формирование ссылок
+
+	use yii\helpers\Html;
+	echo Html::a('ссылка с параметром id', Url::to(['site/index','id'=>'123']));
+	
+	
+	https://github.com/yiisoft/yii2/blob/master/docs/guide-ru/runtime-routing.md
+	use yii\helpers\Url;
+
+	// создает URL для маршрута: /index.php?r=post/index
+	echo Url::to(['post/index']);
+
+	// создает URL для маршрута с параметрами: /index.php?r=post/view&id=100
+	echo Url::to(['post/view', 'id' => 100]);
+
+	// создает якорный URL: /index.php?r=post/view&id=100#content
+	echo Url::to(['post/view', 'id' => 100, '#' => 'content']);
+
+	// создает абсолютный URL: http://www.example.com/index.php?r=post/index
+	echo Url::to(['post/index'], true);
+
+	// создает абсолютный URL с использованием схемы https: https://www.example.com/index.php?r=post/index
+	echo Url::to(['post/index'], 'https');
+		

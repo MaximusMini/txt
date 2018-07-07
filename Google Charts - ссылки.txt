@@ -1,0 +1,7 @@
+Google Charts - ссылки
+
+1	Визуализация с Google Chart Tools API
+		https://habrahabr.ru/post/304296/
+		
+2	Google диаграммы и jQuery AJAX
+		https://ruseller.com/lessons.php?rub=37&id=2296

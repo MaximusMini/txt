@@ -1,0 +1,183 @@
+http://savushkin.by
+
+IP        : 91.149.157.60
+
+HTTPServer[nginx/1.12.0]
+
+Email
+	String       : --Rating@Mail.ru,info@savushkin.by
+	String       : info@savushkin.by
+
+[ Adobe-Flash ]
+	This plugin identifies instances of embedded adobe flash 
+	files. 
+
+	Google Dorks: (1)
+**************************************************
+nmap -vv 91.149.157.60 --proxies socks4://127.0.0.1:9050
+nmap -sn 91.149.157.60/24 --proxies socks4://127.0.0.1:9050
+nmap -vv -sO -sA -sV 91.149.157.222 --proxies socks4://127.0.0.1:9050
+nmap --traceroute 91.149.157.60 --proxies socks4://127.0.0.1:9050 
+
+
+
+
+NMAP
+nmap 91.149.157.60 --proxies socks4://127.0.0.1:9050
+-----------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0049s latency).
+Not shown: 991 filtered ports
+PORT      STATE  SERVICE
+20/tcp    closed ftp-data
+21/tcp    open   ftp
+22/tcp    open   ssh
+80/tcp    open   http
+443/tcp   open   https
+12000/tcp closed cce4x
+12174/tcp closed unknown
+12265/tcp closed unknown
+12345/tcp closed netbus
+Nmap done: 1 IP address (1 host up) scanned in 10.61 seconds
+
+nmap 91.149.157.60 -sV --proxies socks4://127.0.0.1:9050
+--------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0045s latency).
+Not shown: 991 filtered ports
+PORT      STATE  SERVICE  VERSION
+20/tcp    closed ftp-data
+21/tcp    open   ftp      Pure-FTPd
+22/tcp    open   ssh      OpenSSH 6.6.1 (protocol 2.0)
+80/tcp    open   http     nginx 1.12.0
+443/tcp   open   ssl/http nginx 1.12.0
+12000/tcp closed cce4x
+12174/tcp closed unknown
+12265/tcp closed unknown
+12345/tcp closed netbus
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 26.48 seconds
+
+
+nmap 91.149.157.60 -sS -sU --proxies socks4://127.0.0.1:9050
+----------------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0052s latency).
+Not shown: 1991 filtered ports
+PORT      STATE  SERVICE
+20/tcp    closed ftp-data
+21/tcp    open   ftp
+22/tcp    open   ssh
+80/tcp    open   http
+443/tcp   open   https
+12000/tcp closed cce4x
+12174/tcp closed unknown
+12265/tcp closed unknown
+12345/tcp closed netbus
+
+Nmap done: 1 IP address (1 host up) scanned in 1019.83 seconds
+
+
+nmap 91.149.157.60 -sO --proxies socks4://127.0.0.1:9050
+---------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.029s latency).
+Not shown: 254 open|filtered protocols
+PROTOCOL STATE    SERVICE
+1        open     icmp
+17       filtered udp
+
+Nmap done: 1 IP address (1 host up) scanned in 15.53 seconds
+
+
+nmap 91.149.157.60 -sA --proxies socks4://127.0.0.1:9050
+---------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.020s latency).
+All 1000 scanned ports on 91.149.157.37.hosterby.com (91.149.157.60) are filtered
+
+Nmap done: 1 IP address (1 host up) scanned in 9.96 seconds
+
+
+nmap 91.149.157.60 -sF --proxies socks4://127.0.0.1:9050
+---------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0048s latency).
+All 1000 scanned ports on 91.149.157.37.hosterby.com (91.149.157.60) are open|filtered
+
+Nmap done: 1 IP address (1 host up) scanned in 9.87 seconds
+
+
+nmap --traceroute 91.149.157.60 --proxies socks4://127.0.0.1:9050
+---------------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0051s latency).
+Not shown: 991 filtered ports
+PORT      STATE  SERVICE
+20/tcp    closed ftp-data
+21/tcp    open   ftp
+22/tcp    open   ssh
+80/tcp    open   http
+443/tcp   open   https
+12000/tcp closed cce4x
+12174/tcp closed unknown
+12265/tcp closed unknown
+12345/tcp closed netbus
+
+TRACEROUTE (using port 12000/tcp)
+HOP RTT       ADDRESS
+1   107.28 ms 192.168.100.1
+2   ...
+3   107.77 ms mm-209-80-84-93.dynamic.pppoe.mgts.by (93.84.80.209)
+4   6.24 ms   10.0.4.53
+5   6.68 ms   core2.net.belpak.by (93.85.80.57)
+6   4.77 ms   93.84.125.193
+7   5.29 ms   178.124.134.165
+8   5.69 ms   91.149.157.37.hosterby.com (91.149.157.60)
+
+Nmap done: 1 IP address (1 host up) scanned in 19.14 seconds
+
+
+nmap -sR 91.149.157.60 --proxies socks4://127.0.0.1:9050
+---------------------------------------------------------
+Nmap scan report for 91.149.157.37.hosterby.com (91.149.157.60)
+Host is up (0.0048s latency).
+Not shown: 991 filtered ports
+PORT      STATE  SERVICE    VERSION
+20/tcp    closed ftp-data
+21/tcp    open   tcpwrapped
+22/tcp    open   tcpwrapped
+80/tcp    open   http       nginx 1.12.0
+443/tcp   open   ssl/http   nginx 1.12.0
+12000/tcp closed cce4x
+12174/tcp closed unknown
+12265/tcp closed unknown
+12345/tcp closed netbus
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 27.60 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

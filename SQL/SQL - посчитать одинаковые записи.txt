@@ -1,0 +1,13 @@
+SQL - посчитать одинаковые записи
+
+	SELECT `filename`, COUNT(`filename`) AS cnt FROM `table` GROUP BY `filename`
+		Сделать группировку по Filename
+		
+		Filename - поле в котором определяется количество одинаковых записей
+		добавить count(*) как аргумент на выборку
+	
+	
+	SELECT id_members, COUNT(id_members) AS cnt FROM id_members GROUP BY id_members
+	
+	SELECT name_group, COUNT(name_group) AS cnt FROM id_members GROUP BY name_group
+	

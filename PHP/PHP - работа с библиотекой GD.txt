@@ -1,0 +1,70 @@
+PHP - работа с библиотекой GD
+
+
+// функция формирования картинки
+function template(){
+    // загружаем изображение
+    $image = imagecreatefrompng('temp_lead_p.png');
+    // ЦВЕТА 
+    $grey = imagecolorallocate($image, 249, 230, 85);
+    $green = imagecolorallocate($image, 206, 225, 199);
+    $green_1 = imagecolorallocate($image, 129, 255, 129);
+    $black = imagecolorallocate($image, 0, 0, 0);
+    $yellow = imagecolorallocate($image, 244,255,120);
+    // ШРИФТЫ
+    $font = '../font/soviet.ttf';
+    $font_name_team = '../font/BigNoodleTitlingCyr.ttf';
+    $font_Xolonium = '../font/Xolonium_Bold.ttf';
+    // СОХРАНЕНИЕ
+    imagepng($image,'new/playoff_.png',9);   
+}
+
+
+1.	Проверка подключения библиотеки
+		открываем файл php.ini
+		ищем extension=php_gd2.dll
+		напротив строки не должно быть ;
+	
+2.	Вывод изображения средствами php
+		в параметре src тэга img указывается путь к скрипту
+			<img src='image.php' >
+	
+3.	Для вывода изображения его необходимо создать (image.php)
+		в переменную img записывается дискриптор изображения
+			$image = imagecreatetruecolor();
+				imagecreatetruecolor() - необходимо передать ширину и высоту изображения
+			$image = imagecreatetruecolor(300, 300);
+				в данном случае создалось пустое изображение с нуля
+				
+		создание изображения на основе существующего
+			в переменную $img_1 сохраняется дисриптор изображения
+			$img_1 = imagecreatefromjpeg('photo_29088.jpg'); // формат jpeg
+
+4.	Вывод изображения на экран
+		отправить браузеру заголовок о том, что будет выводиться изображение
+			header('Contant-Type:image/jpeg');
+		сохранение изображения - второй параметр имя файла в котором сохранится изображение
+			imagejpeg($image, 'new_name.jpeg', 100 );
+		вывод изображения на экран
+			imagejpeg($image, NULL, 100 );
+			
+5.	Определение цвета
+		
+
+
+			
+			
+			10/40
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

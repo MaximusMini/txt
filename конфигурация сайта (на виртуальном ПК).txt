@@ -1,0 +1,35 @@
+конфигураци€ сайта
+1	название сайта		qwerty
+2	e-mail			qwerty@mail.ru
+3	логин			admin
+4	пароль			12345
+
+конфигураци€ Ѕƒ
+1	тип базы данных		MySQLi
+2	»м€ сервера базы данных	localhost
+3	им€ пользовател€	qwerty
+4	пароль			12345
+5	им€ базы данных		qwerty
+6	префикс таблиц		gwcjl_
+
+«авершение установки
+1	установка демо-данных	нет
+
+
+
+
+
+Ѕаза данных
+1	пользователь		qwerty
+2	хост			локальный
+3	пароль			12345
+4	—оздать базу данных с именем пользовател€ в названии и предоставить на нее полные привилегии - да
+=============================================================================================
+CREATE USER 'qwerty'@'localhost' IDENTIFIED BY '***';
+
+GRANT USAGE ON * . * TO 'qwerty'@'localhost' IDENTIFIED BY '***' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+
+CREATE DATABASE IF NOT EXISTS `qwerty` ;
+
+GRANT ALL PRIVILEGES ON `qwerty` . * TO 'qwerty'@'localhost';
+=============================================================================================

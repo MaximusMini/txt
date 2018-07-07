@@ -1,0 +1,5 @@
+
+Файловый менеджер - gnome-commander
+
+apt install  gnome-commander
+gnome-commander

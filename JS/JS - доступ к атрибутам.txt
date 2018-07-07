@@ -1,0 +1,12 @@
+JS- доступ к атрибутам
+https://learn.javascript.ru/attributes-and-custom-properties
+
+Доступ к атрибутам осуществляется при помощи стандартных методов:
+
+elem.hasAttribute(name) – проверяет наличие атрибута
+elem.getAttribute(name) – получает значение атрибута
+elem.setAttribute(name, value) – устанавливает атрибут
+elem.removeAttribute(name) – удаляет атрибут
+Эти методы работают со значением, которое находится в HTML.
+
+Также все атрибуты элемента можно получить с помощью свойства elem.attributes, которое содержит псевдо-массив объектов типа Attr.

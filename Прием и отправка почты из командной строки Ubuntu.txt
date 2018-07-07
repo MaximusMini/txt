@@ -1,0 +1,53 @@
+Прием и отправка почты из командной строки Ubuntu
+(http://rus-linux.net/MyLDP/consol/mails.html)
+
+1	в linux мы можем отправлять или получать почту в командной строке. 
+	Это полезно в таких ситуациях, как отправка почты из скриптов, или в случаях, когда графическая оболочка недоступна.
+	
+2	может понадобиться установить дополнительные пакеты, такие как mailutils, чтобы команда mail нормально работал
+		# apt-get install mailutils
+	Теперь команда mail должна быть готова к работе
+	
+3	Выполните приведенную ниже команду, заменив "user@yourmaildomain.com" на свой адрес электронной почты. 
+		$ mail -s "Hello World" user@yourmaildomain.com
+		(echo "Test mail from postfix" | mail -s "Test Postfix" user@gmail.com)
+	Опция s задает тему письма.
+
+
+Отправка Email сообщений из консоли Linux
+(http://onedev.net/post/278)
+
+1	Отправить сообщение из консоли:
+		echo "BODY" | mail -s "SUBJECT" your_email@gmail.com
+
+2	Составить сообщение в консоли:
+		mail your_email@gmail.com
+		Cc: <оставляем пустым>
+		Subject: вводим заголовок и для отправки жмем Ctrl+D или Enter и заполним тело сообщения..
+		Null message body; hope that's ok
+
+3	Проверка PHP ф-ции mail():
+		php -r "mail('your_email@gmail.com', 'Subject', 'Body');"
+			
+4	Аттач файла к Email сообщению:
+		mutt -a "/home/stas/attach.pdf" -s "Subject" -- receiver@gmail.com
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

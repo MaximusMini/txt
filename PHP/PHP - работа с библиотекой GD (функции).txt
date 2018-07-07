@@ -1,0 +1,47 @@
+PHP - работа с библиотекой GD (функции)
+	http://php.net/manual/ru/ref.image.php
+	
+
+	imagecreatefromgif — Создает новое изображение из файла или URL
+		resource imagecreatefromgif ( string $filename )
+			возвращает идентификатор изображения, представляющего изображение полученное из файла с заданным именем
+		
+	imagecolorallocate — Создание цвета для изображения
+	
+	imagecopymerge — Копирует часть изображения с наложением
+		bool imagecopymerge ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h , int $pct )
+			src_im - Ресурс исходного изображения.
+			dst_im - Ресурс целевого изображения.
+			dst_x - x-координата результирующего изображения.
+			dst_y - y-координата результирующего изображения.
+			src_x - x-координата исходного изображения.
+			src_y - y-координата исходного изображения.
+			src_w - Ширина исходного изображения.
+			src_h - Высота исходного изображения.
+			
+	imagettftext — Рисование текста на изображении шрифтом TrueType
+	
+	imagecopyresized — Копирование и изменение размера части изображения
+		bool imagecopyresized ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )
+			dst_image - Ресурс целевого изображения.
+			src_image - Ресурс исходного изображения.
+			dst_x - x-координата результирующего изображения.
+			dst_y - y-координата результирующего изображения.
+			src_x - x-координата исходного изображения.
+			src_y - y-координата исходного изображения.
+			dst_w - Результирующая ширина.
+			dst_h - Результирующая высота.
+			src_w - Ширина исходного изображения.
+			src_h - Высота исходного изображения.
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

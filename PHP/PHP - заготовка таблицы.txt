@@ -1,0 +1,7 @@
+PHP - заготовка таблицы
+
+	$table_header = '<table><thead><tr><th>№</th><th>Фамилия</th><th>Имя</th><th>Очков</th></tr></thead><tbody>';
+    $table_body = '<tr><td>№</td><td>Фамилия</td><td>Имя</td><td>Очков</td></tr>';
+    $table_footer = '</tbody></table>';
+	
+	echo $table_header.$table_body.$table_footer;

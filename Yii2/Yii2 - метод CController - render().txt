@@ -1,0 +1,17 @@
+конспект по yii2
+
+render()
+http://www.yiiframework.com/doc/api/1.1/CController#render-detail
+Чтобы отобразить представление, необходимо вызвать метод CController::render(), указав имя представления. 
+При этом метод попытается найти соответствующий файл в директории protected/views/ControllerID.
+
+public string render(string $view, array $data=NULL, boolean $return=false)
+	$view 		(string)	-	name of the view to be rendered.
+	$data		array		-	data to be extracted into PHP variables and made available to the view script
+	$return		boolean		-	whether the rendering result should be returned instead of being displayed to end users.
+	{return}	string		-	the rendering result. Null if the rendering result is not required.
+
+метод render() преобразует второй параметр — массив — в переменные. Как результат, внутри представления будут доступны локальные переменные
+
+*************************************************************************************************
+

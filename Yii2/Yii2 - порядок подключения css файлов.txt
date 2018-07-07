@@ -1,0 +1,13 @@
+Yii2 - порядок подключения css файлов
+http://yiiframework.ru/forum/viewtopic.php?t=21545
+
+	Для подключения своего css файла ниже базовых файлов (yii\web\YiiAsset и yii\bootstrap\BootstrapAsset)
+		нужно прописать ['depends' => ['yii\bootstrap\BootstrapAsset']
+	
+		$this->registerCssFile('static/theme/css/news.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
+	
+	
+	Для подключения своего css файла ниже файлов подключенных через public $css = [...] и  public $js = [...]
+		нужно прописать ['depends' => ['app\assets\AppAsset']]
+	
+		$this->registerCssFile('static/theme/css/news.css', ['depends' => ['app\assets\AppAsset']]);

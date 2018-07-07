@@ -1,0 +1,17 @@
+
+Создайте базовый бандл со своими самыми основными функциями (которые используются везде). Примерно, как тут:
+
+class BaseAsset extends AssetBundle
+{
+
+    public $sourcePath = '@resources'; // @app/resources
+
+    public $css = [ ];
+
+    public $js = [ ];
+
+    public $depends = [
+        'yii\web\YiiAsset',
+    ];
+
+    public $jsOptions = [ 'position' => \yii\web\View::POS_HEAD ];

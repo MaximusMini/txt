@@ -1,0 +1,70 @@
+енастройка smtp сервера
+
+Чтобы проверить, есть ли уже у вашей системы полностью определенное имя, зарегистрируйтесь и введите команду hostname:
+		$ hostname -f
+
+======================================================================================================================
+echo "BODY" | mail -s "SUBJECT" pecheneda.pups@gmail.com
+
+php -r "mail('pecheneda.pups@gmail.com', 'Subject', 'Body');"
+
+php -r "mail('pecheneda.pups@gmail.com', '=?KOI8-R?B?zQ==?=', 'Body', 'From: =?UTF-8?B?R9C+0L5nbNC1?= <"veronika@gmail.com">\n');"
+
+php -r "mail('pecheneda.pups@gmail.com', 'Svegaya statia', 'Body', 'From: Igor ZZZ <"igor.zzz@gmail.com">\n');"
+
+php -r "mail('pecheneda.pups@gmail.com', '=?UTF-8?Q?=D0=98=D0=BD=D0=B4=D0=B5=D0=BA=D1=81=D0=B0=D1=86=D0=B8=D1=8F=20?= ', 'Body', 'From: Igor ZZZ <"igor.zzz@gmail.corn">\n');"
+
+======================================================================================================================
+
+Сносим sendmail
+	aptitude purge sendmail
+	(Программа 'aptitude' на данный момент не установлена. Вы можете установить её, выполнив: sudo apt-get install aptitude)
+
+Установка postfix
+	sudo apt-get install postfix ca-certificates
+	(# dpkg --get-selections)
+	(# sudo dpkg --get-selections)
+
+В доступных режимах работы выбрать 
+	«Internet Site» 
+	и название хоста «localhost» 
+	или используйте имя вашей машинки (у меня, например e5530).
+
+Для удаления postfix выполните:
+	sudo apt-get remove purge postfix
+
+конфигурационный файл MTA Postfix
+	/etc/postfix/mail.cf:
+
+проверка имени хоста
+	$ hostname -f
+	kutaisoff.vds
+
+установка dnsutils package для работы команд nslookup и dig
+	$ sudo apt-get install dnsutils
+
+с помощью утилиты host в ОС GNU/Linux, FreeBSD и т. п. запросим запись MX для домена
+		$ host -t mx wikipedia.org.
+		$ host -t mx kutaisoff.vds.
+		Host kutaisoff not found: 3(NXDOMAIN)
+		$ host -t mx jennifer2.iam.by
+		jennifer2.iam.by mail is handled by 10 mail.jennifer2.iam.by.
+		список почтовых серверов, обслуживающих почту домена, представлен одним хостом с приоритетом 10
+		
+		$ host -t mx zapraudu.info
+		
+		$ host -t mx regnum.ru
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+прописать PTR запись
+	благодаря данной записи почтовые службы по IP точно могут узнать каноническое имя домена

@@ -1,0 +1,27 @@
+Yii2 - подключить js файлы в теге head
+https://liblessons.ru/programming/framework-yii2/yii2-podklyuchit-skripty-v-head/
+
+	Необходимо отредактировать файл подключение стилей и скриптов для соответствующего шаблона. Для этого переходим в папку assets и выбираем нужный нам файл (в моём случае он будет называться MyAsset)
+
+	Строка:
+		public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+	
+	перемещает подключение всех скриптов сайта (шаблона) из нижней позиции (после закрывающего тега html) в тег head. После чего пропадают ошибки при вызове функций jQuery в файлах вида.
+	
+		class MyAsset extends AssetBundle
+			{
+				public $basePath = '@webroot';
+				public $baseUrl = '@web';
+				public $css = [
+					'css/style.css',
+				];
+				public $js = [
+					'js/script.js',
+				];
+				public $depends = [
+					'yii\web\YiiAsset',
+					'yii\bootstrap\BootstrapAsset',
+				];
+			 
+				public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+			}

@@ -1,0 +1,7 @@
+PHP - Unix time в нормальный вид
+
+	
+
+
+
+	date('d-m-Y H:i:s',$UnixTime)

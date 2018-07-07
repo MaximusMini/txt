@@ -1,0 +1,87 @@
+Взлом и нападение: аудит веб-приложений и техники атаки
+вебинар Geekbrains
+
+1	Разведка
+		сканирование портов/сервисов
+		определение версии ОС
+		определение платформ и технологий
+		поиск директорий и файлов, в.т. скрытых
+		поиск всех доменов и субдоменов
+		доступные методы
+		поиск Shared Hosting
+	
+	Программы
+		
+		dnsrecon 
+			анализирует DNS записи
+			(http://www.thecurrent.ru/entry/kali-linux-vychislenie-dns-serverov-s-pomoshchyu-kali.html)
+			
+			
+		WPScan
+			сканер уязвимостей WordPress
+			определяет текущую версию WordPress
+			https://kali.tools/?p=156
+			https://www.8host.com/blog/ispolzovanie-wpscan-dlya-obnaruzheniya-uyazvimyx-plaginov-i-tem-wordpress/
+			
+		dirb
+			брутфорс директорий
+			https://codeby.net/bezopasnost/dirb-poisk-skrytyh-katalogov-i-fajlov-na-veb-sajtah/
+			
+		nmap
+			сетевой сканер
+			
+			пример:
+				пройтись от 0 до 1000 портов, определить запущенные сервисы на этих портах, определить ОС
+				nmap -sV -O -TS site.com -p0-1000
+			
+		masscan
+			сетевой сканер
+			https://kali.tools/?p=976
+			
+		https://dnsdumpster.com
+			определяет DNS записи, хостера и т.д.
+			
+			
+2	Фазинг - проверка входных данных
+		
+	Программы:
+		
+		wfuzz
+			позволяет передавать конкретные куки на сайт
+			
+		sqlmap
+			определение sql инъекций
+			
+		01.02.00
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

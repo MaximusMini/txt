@@ -1,0 +1,15 @@
+Chart.js - типы диаграмм
+
+	Тип диаграммы указывается в параметре type
+		line
+			var myLineChart = new Chart(ctx, {
+				type: 'line',
+				data: data,
+				options: options
+			});
+		bar 
+		radar 
+		polarArea 
+		pie 
+		doughnut
+		bubble

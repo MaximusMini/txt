@@ -1,0 +1,55 @@
+
+
+composer --prefer-dist yiisoft/yii2-jui
+
+composer requiry yiisoft/yii2-jui
+
+!!!
+composer require yiisoft/yii2-jui
+
+Invalid argument yiisoft/yii2-jui. Use "composer require yiisoft/yii2-jui" instead to add packages to your composer.json.
+
+
+Данаец@ДАНАЕЦ-ПК c:\OpenServer\domains\myyii
+$ composer require yiisoft/yii2-jui
+Warning: This development build of composer is over 60 days old. It is recommended to update it by running "c:\openserver\modules\php\PHP-
+5.4\composer.phar self-update" to get the latest version.
+Using version ^2.0 for yiisoft/yii2-jui
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - yiisoft/yii2-jui 2.0.4 requires bower-asset/jquery-ui 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2-jui 2.0.3 requires bower-asset/jquery-ui 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2-jui 2.0.2 requires bower-asset/jquery-ui 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2-jui 2.0.1 requires bower-asset/jquery-ui 1.11.*@stable -> no matching package found.
+    - yiisoft/yii2-jui 2.0.0 requires bower-asset/jquery-ui 1.11.*@stable -> no matching package found.
+    - Installation request for yiisoft/yii2-jui ^2.0 -> satisfiable by yiisoft/yii2-jui[2.0.0, 2.0.1, 2.0.2, 2.0.3, 2.0.4].
+
+Potential causes:
+ - A typo in the package name
+ - The package is not available in a stable-enough version according to your minimum-stability setting
+   see <https://groups.google.com/d/topic/composer-dev/_g3ASeIFlrc/discussion> for more details.
+
+Read <https://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
+
+Installation failed, reverting ./composer.json to its original content.
+
+
+
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "type": "package",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Open Server",
+            "email": "admin@openserver.by"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

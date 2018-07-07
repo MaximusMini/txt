@@ -1,0 +1,26 @@
+jQuery - автоматическая загрузка контента при скролле
+http://easy-code.ru/lesson/useful-jquery-snippets
+
+Автоматическая загрузка контента при скролле
+
+Некоторые сайты, Facebook например, автоматически подгружают контент, когда пользователь прокручивает страницу вниз. jQuery для динамической загрузки страницы:
+
+var loading = false;
+$(window).scroll(function(){
+	if((($(window).scrollTop()+$(window).height())+250)>=$(document).height()){
+		if(loading == false){
+			loading = true;
+			$('#loadingbar').css("display","block");
+			$.get("load.php?start="+$('#loaded_max').val(), function(loaded){
+				$('body').append(loaded);
+				$('#loaded_max').val(parseInt($('#loaded_max').val())+50);
+				$('#loadingbar').css("display","none");
+				loading = false;
+			});
+		}
+	}
+});
+
+$(document).ready(function() {
+	$('#loaded_max').val(50);
+});

@@ -1,0 +1,33 @@
+SQL - добавление записей в таблицу
+
+	INSERT INTO имя_таблицы VALUES ('значение_первого_столбца','значение_второго_столбца', ..., 'значение_последнего_столбца');
+	
+	
+
+
+	INSERT INTO test VALUES (1, TIME('29:13'), '29:13');
+	INSERT INTO test VALUES (2, TIME('4:49'), '4:49');
+	INSERT INTO test VALUES (3, TIME('1000:55'), '1000:55');
+	INSERT INTO test VALUES (4, TIME('1597:41'), '1597:41');
+	INSERT INTO test VALUES (5, TIME('113:15'), '113:15');
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,53 @@
+библиотеки PHP для парсинга
+	
+		echo '<h3>парсер</h3>';
+	
+	include_once('lib/simple_html_dom.php');
+	
+	//обращение к файлу для получения контента
+	//$html = file_get_html('http://talks.by/showthread.php?t=14274266&page=2');
+	//echo $html;
+	
+	/*
+	почему не рекомендуется использовать file_get_html
+	- проблема с заголовками
+	-нельзя прописать заголовки имитирующие посещения с браузера
+	-если этого не делать можно быть заблакированым
+	- для используется библиотека curl, позволяющая полностьюэмулировать браузер и т.д. (http://www.php.su/lessons/?lesson_11)
+	*/
+	
+	function curl_get ($url, $referer = 'http://google.com'){
+		$ch = curl_init($url);// инициализируем curl
+		// задаем параметры (опции) curl 
+		curl_setopt($ch, CURLOPT_URL,$url);
+		curl_setopt($ch, CURLOPT_HEADER,0);
+		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (Windows NT 6.1; rv:42.0) Gecko/20100101 Firefox/42.0');
+		curl_setopt($ch, CURLOPT_REFERER,$referer);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,true); // результат работы curl возвращается, а не выводиться
+		//  выполняем запрос curl
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data;
+	}
+	
+	//echo  curl_get('http://talks.by/showthread.php?t=14274266&page=2');
+	
+	$download_page = curl_get('http://talks.by/showthread.php?t=14274266&page=2');
+	
+	// записываем полученную страницу в файл
+	file_put_contents('1',$download_page);
+	
+	//получаем преобразованную в структуру страницу
+	$dom = str_get_html($download_page);
+	
+	//ищем необходимые элементы
+	$comment = $dom->find('.row-content-tut');
+	
+	//echo $comment;
+	
+	foreach ($comment as $key => $value) {
+			//echo "номер $key<br> <b>$value</b><br>";
+		}
+	
+	echo $comment[1]->plaintext;
+	echo $comment[2]->plaintext;

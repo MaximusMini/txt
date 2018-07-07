@@ -1,0 +1,6 @@
+Yii2 - подключение файла php (include) в views
+
+Как в yii2 сделать include php файла в views?
+https://toster.ru/q/395497
+
+	include(Yii::getAlias('@app/views/part.php'));

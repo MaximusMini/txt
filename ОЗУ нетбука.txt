@@ -1,0 +1,5 @@
+samsung N100SP
+DIMM2 Samsung M471B2873GB0-CH9
+тип памяти 			DDR3 SDRAM
+скорость памяти		DDR3-1333 (667МГц)
+ширина модуля 		64 bit

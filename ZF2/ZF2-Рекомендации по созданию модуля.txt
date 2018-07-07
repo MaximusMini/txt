@@ -1,0 +1,27 @@
+ZF2-Рекомендации по созданию модуля
+
+Рекомендуется придерживаться следующей структуры при создании модуля
+
+module_root<named-after-module-namespace>/
+    Module.php
+    autoload_classmap.php
+    autoload_function.php
+    autoload_register.php
+    config/
+        module.config.php
+    public/
+        images/
+        css/
+        js/
+    src/
+        <module_namespace>/
+            <code files>
+    test/
+        phpunit.xml
+        bootstrap.php
+        <module_namespace>/
+            <test code files>
+    view/
+        <dir-named-after-module-namespace>/
+            <dir-named-after-a-controller>/
+                <.phtml files>

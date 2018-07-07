@@ -1,0 +1,6 @@
+PHP - новая строка в file_put_contents
+
+	 file_put_contetnts("file.txt", "\n".$text,FILE_APPEND); 
+	 
+	$get = file_get_contents("lol\1.txt"); 
+	file_put_contents ("lol\1.txt",$get."\n".$text);  

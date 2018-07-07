@@ -1,0 +1,29 @@
+Анонимное общение
+
+	1. Обзор средств (ПО) для ананимного общения в сети
+	2. Обзор мессенджеров
+		https://xakep.ru/2017/07/21/jabber-otr-howto/
+	3. P2P-сети
+		можно использовать существующие решения
+			RestroShare
+		оценка их надежности
+	4. Создание безопасных P2P-сетей резидентами ПВТ
+		GNUnet — фреймворк для организации безопасной P2P-сети
+	
+	Статьи:
+		https://xakep.ru/2014/09/24/anonimuos-tips/
+		https://xakep.ru/2017/07/21/jabber-otr-howto/
+
+
+	Для безопасного общения существует децентрализованная анонимная система обмена сообщениями — TorChat.
+	
+	GNUnet (https://gnunet.org/) — фреймворка для организации безопасной P2P-сети
+		https://www.securitylab.ru/news/448730.php
+		
+	RestroShare — это открытая кросс-платформенная программа для построения децентрализованной сети
+		http://retroshare.net/index.html
+		https://xn--90abhbolvbbfgb9aje4m.xn--p1ai/%D1%81%D0%B5%D1%82%D1%8C,-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82/%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/retroshare-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%B7%D0%B0%D1%88%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%BE%D0%B1%D0%BC%D0%B5%D0%BD%D0%B0.html
+		
+	ChatSecure – бесплатное приложение для мобильных телефонов под управлением iOS и Android.
+		https://okopalipsis-now.livejournal.com/73236.html
+		http://appliftonews.ru/app/chatsecure_multiprotokolnyj_chat_i_im_klient_s_podderzhkoj_shifrovaniya_google_talk_xmpp_aim

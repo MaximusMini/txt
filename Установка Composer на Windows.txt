@@ -1,0 +1,96 @@
+Установка Composer на Windows
+
+1	Переходи на сайт https://getcomposer.org/
+
+2	нажимаем Download
+
+3 	В разделе Windows Installer нажимаем на ссылку  Composer-Setup.exe
+
+4	Запускаем скачанный файл
+
+5	Выбираем Shell Menus - Install Shell Menus, для того чтобы использовать Composer из проводника
+
+6	Указывем путь к php 
+	для OpenServer c:\OpenServer\modules\php\PHP-5.4\php.exe
+	
+	в случае появления ошибки	Core_rl_wand_.dll не найден.
+	в файле php.ini нужно закомментировать строку
+		;extension=php_imagick.dll
+
+7	Переходим на сайт https://packagist.org/
+		загружаемые с помощью Composer версии приложений, называются пакетами
+		все пакеты загружаються через GitHub через сайт packagist.org
+		по сути сайт packagist.org является репозитарием для Composer
+
+8	Переходим по ссылки Browse Packages (в самом низу)
+
+9	В поисковом поле введем Composer Asset Plugin
+		плагин Composer Asset Plugin позволяет управлять зависимостями пакетов (css, js, jQuery, jQuery UI, Bootstrap) в composer.json файле, без установки Bower и NPM.
+		этот плагин переносит пакетную информацию из Bower и NPM, в савместимую с версией для Composer
+
+10	Переходим на страницу плагина fxp/composer-asset-plugin
+
+11	Далее на домашную страницу плагина Homepage
+
+12	Находим раздел Installation и нажимаем  documentation (https://github.com/francoispluchino/composer-asset-plugin/blob/master/Resources/doc/index.md)	
+
+13	На открывшейся странице находим раздел Global scope (per user) installation и копируем ссылку 
+		$ composer global require "fxp/composer-asset-plugin:~1.1"
+		данная ссылка установит плагин глобально и он будет доступен любому приложению, скачанному через Composer
+
+14	
+		
+		
+		
+14	Открываем командную строку в OpenServer
+		Меню -> Дополнительно -> Консоль
+
+15	Переходим в каталог с сайтом
+		cd c:\OpenServer\domains\myyii\
+
+16	Запускаем команду composer
+		на экране должна отобразиться справочная информация о composer
+
+17	
+		
+		
+		
+15 	Вводим composer global require "fxp/composer-asset-plugin:~1.1"
+		должны получить установку плагина
+		
+		Loading composer repositories with package information
+		Updating dependencies (including require-dev)
+		  - Removing fxp/composer-asset-plugin (v1.0.0-beta4)
+		  - Installing fxp/composer-asset-plugin (v1.1.2)
+			Downloading: 100%
+
+16
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

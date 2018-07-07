@@ -1,0 +1,53 @@
+
+	kutaisoff@gmail.com
+	ElenaK07011989
+	https://github.com/MaximusMini/OneRepoz.git
+	
+	1.Чтобы загрузить что-нибудь в удаленный репозиторий, сначала нужно к нему подключиться.
+		будем использовать адрес https://github.com/MaximusMini/OneRepoz.git
+	
+	2. Связавание локального репозитория с репозиторием на GitHub
+		$ git remote add origin https://github.com/MaximusMini/OneRepoz.git
+		
+		2.1 Просмотр удалённых серверов которые уже настроены
+			$ git remote
+			
+		2.2 Просмотр какому URL соотвествует сокращенное имя в Git
+			$ git remote -v
+		
+	3. Отправка изменений на сервер
+		$ git push origin master
+			Counting objects: 3, done.
+			Writing objects: 100% (3/3), 212 bytes | 0 bytes/s, done.
+			Total 3 (delta 0), reused 0 (delta 0)
+			To https://github.com/tutorialzine/awesome-project.git
+			* [new branch] master -> master
+		
+	4. Клонирование репозитория
+		$ git clone https://github.com/tutorialzine/awesome-project.git
+		
+	5. Запрос изменений с сервера
+		$ git pull origin master
+			From https://github.com/tutorialzine/awesome-project
+			* branch master -> FETCH_HEAD
+			Already up-to-date.
+	
+	6. Просмотр настроенных удаленных серверов
+		$git remote
+		
+	7. Удаление удалённых репозиториев
+		$ git remote rm paul
+			paul - имя удалённого репозитория 
+	
+	8. Переименование удалённых репозиториев
+		$ git remote rename pb paul
+		$ git remote
+		origin
+		paul
+		
+		
+		
+		
+		
+		
+	

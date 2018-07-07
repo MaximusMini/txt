@@ -1,0 +1,12 @@
+JS - получение значения value input (type=text)
+
+		используется выражение document.getElementById("txt").value
+		
+		<input type="text" id="txt"/>
+		<input type="button" id="btn" value="Жмакни меня">
+		<script>
+			function someFunc(){
+			alert(document.getElementById("txt").value);
+			}
+			document.getElementById("btn").onclick = someFunc;
+		</script>

@@ -1,0 +1,136 @@
+Bootstrap-tabs
+
+https://www.youtube.com/watch?v=EMvJ-E5wch0
+
+!!!!ОБЯЗАТЕЛЬНО
+должны быть подключены css и js файлы bootstrap - иначе не будет работать
+
+1	создаем div в котором будут находится табы
+	
+		<div class='tabs'>
+		</div>
+
+2	в этом блоке прописывем ul с классами nav и nav-tabs
+	в ul с помощью li прописываем нужные вкладки 
+		
+		<div class='tabs'>
+			<ul class='nav nav-tabs'>
+				<li><a href='#'>Вкладка 1</a></li>
+				<li><a href='#'>Вкладка 2</a></li>
+				<li><a href='#'>Вкладка 3</a></li>
+			</ul>
+		</div>
+	
+	в итоге получаем три вкладки
+
+3	для того чтобы понимать какя вкладка активная
+	поставим первому <li> class="active"
+
+4	после <ul> создаем новый div с классом tab-content
+		
+		<div class="tab-content">
+		</div>
+
+5 	в этом созданном блоке прописываем div-ы с классом tab-pane
+	количество  <div class="tab-pane"> определяется количеством вкладок
+	
+		<div class="tab-content">
+			<div class="tab-pane"></div>
+			<div class="tab-pane"></div>
+			<div class="tab-pane"></div>
+		</div>
+
+6	в первом блоке <div class="tab-pane"> прописываем active	
+	внутри блока прописываем то, что ходим видеть при активной вкладке
+		
+		<div class="tab-content">
+			<div class="tab-pane active" >
+				<p>Содержимое вкладки 1</p>
+			</div>
+			<div class="tab-pane">
+				<p>Содержимое вкладки 2</p>
+			</div>
+			<div class="tab-pane">
+				<p>Содержимое вкладки 3</p>
+			</div>
+		</div>
+
+7	каждому блоку <div class="tab-pane"> необхожимо прописать идентификатор id
+	по которому будем обращаться к этому блоку
+	
+		<div class="tab-content">
+				<div class="tab-pane active" id='tab-1' >
+					<p>Содержимое вкладки 1</p>
+				</div>
+				<div class="tab-pane" id='tab-2'>
+					<p>Содержимое вкладки 2</p>
+				</div>
+				<div class="tab-pane" id='tab-3'>
+					<p>Содержимое вкладки 3</p>
+				</div>
+		</div>
+
+8	за переключение между вкладками отвечатют ссылки вблоках <li>
+
+	прописываем ссылкам атрибут data-toggle="tab"
+		<ul class='nav nav-tabs'>
+				<li class="active"><a href='#' data-toggle="tab">Вкладка 1</a></li>
+				<li><a href='#' data-toggle="tab">Вкладка 2</a></li>
+				<li><a href='#' data-toggle="tab">Вкладка 3</a></li>
+		</ul>
+	
+	в href ссылки должна стоять ссылка на наш id блока <div class="tab-pane">
+		<ul class='nav nav-tabs'>
+				<li class="active"><a href='#tab-1' data-toggle="tab">Вкладка 1</a></li>
+				<li><a href='#tab-2' data-toggle="tab">Вкладка 2</a></li>
+				<li><a href='#tab-3' data-toggle="tab">Вкладка 3</a></li>
+		</ul>
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

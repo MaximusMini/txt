@@ -1,0 +1,39 @@
+SQL - добавление столбца в таблицу
+
+	ALTER TABLE table_name ADD field_name parametrs
+		table_name - имя таблицы, в которой будет вставлен новый столбец;
+		field_name - имя вставляемого столбца;
+		parametrs - параметры, описывающие вставляемый столбец.
+		
+	Обязательным параметром является указание типа данных.
+		
+		Например, нам надо вставить в таблицу my_frends столбец под названием adress_2, который будет содержать текстовые значения:
+			ALTER TABLE my_frends ADD adress_2 TEXT
+			
+	По умолчанию новый столбец вставляется в конец таблицы.
+		чтобы столбец встал в начало таблицы, нужно после параметров вставляемого столбца написать ключевое слово FIRST:
+		ALTER TABLE my_frends ADD adress_2 TEXT FIRST
+		
+	чтобы столбец был вставлен не в начале таблицы, и не в конце, а после определенного столбца, то нужно применить ключевое слово AFTER имя столбца, после которого будет установлен новый столбец:
+		ALTER TABLE my_frends ADD adress_2 TEXT AFTER adress_1
+		
+	Если нужно дописать к таблице не один, а несколько столбцов, то для каждого столбца нужно ADD field_name parametrs записать через запятую:
+		ALTER TABLE my_frends ADD adress_2 TEXT, ADD adress_3 TEXT, ADD adress_4 TEXT
+		
+	если надо дописать два столбца внутри таблицы, можно поступить следующим образом:
+		ALTER TABLE my_frends ADD adress_2 TEXT AFTER adress_1, ADD adress_3 TEXT AFTER adress_2
+		
+	ALTER TABLE stat_defenders ADD profile VARCHAR(255) AFTER id_player
+	ALTER TABLE stat_attacks ADD profile VARCHAR(255) AFTER id_player
+	ALTER TABLE stat_defenders ADD date_wrte DATETIME
+	ALTER TABLE stat_attacks ADD date_wrte DATETIME
+	ALTER TABLE stat_attacks ADD num INT FIRST
+	ALTER TABLE stat_defenders ADD num INT FIRST
+	
+	
+	
+	
+	
+	
+	
+	

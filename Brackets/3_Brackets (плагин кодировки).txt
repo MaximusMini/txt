@@ -1,0 +1,26 @@
+Управление кодировкой в brackets
+https://toster.ru/q/146705
+
+Есть расширение, называется Shizimily Multi-Encoding for Brackets 
+
+Скачать можно здесь ( рекомендовано ) https://github.com/Hiromi-Ayase/brackets-shizimily... 
+
+Открываешь Brackets, Help, Show Extensions Folder. 
+Далее открываешь папку user и туда распаковываешь расширение. 
+Перезапускаешь Brackets и в правом нижнем углу появится меню настройки кодировок. PROFIT .
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

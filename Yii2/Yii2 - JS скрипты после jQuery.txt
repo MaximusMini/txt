@@ -1,0 +1,36 @@
+http://www.yiiframework.ru/forum/viewtopic.php?t=16584
+
+
+1	если в view юзаю $this->registerJsFile то скрипты становятся перед jQuery и не работают
+
+2	!!! параметр depends
+		$this->registerJsFile('/web/',['depends' => ['app\assets\AppAsset']]);
+
+3	у меня вот как прокатило 
+		Yii::$app->view->registerJsFile('/js/rooms-list.js', ['yii\web\JqueryAsset']);
+
+4	варианты написания подключения js скрипта
+		$this->registerJsFile('@app/assets/js/script.js', self::POS_READY);
+		$this->registerJsFile('@app/assets/js/script.js', [], ['position' => self::POS_READY]);
+		
+5	Описание метода registerJsFile()
+		public function registerJsFile($url, $options = [], $key = null)
+			{
+				$position = isset($options['position']) ? $options['position'] : self::POS_END;
+				unset($options['position']);
+				$key = $key ?: $url;
+				$this->jsFiles[$position][$key] = Html::jsFile($url, $options);
+			}
+		
+		В исходниках yii2\web\view.php этот метод только position в $options = [] принимает position указывает в header или в конец body писать, по умолчинию в конец body. 
+
+
+		
+
+The position at which the JS script tag should be inserted in a page. The possible values are:
+
+POS_HEAD: in the head section
+POS_BEGIN: at the beginning of the body section
+POS_END: at the end of the body section
+POS_LOAD: enclosed within jQuery(window).load(). Note that by using this position, the method will automatically register the jQuery js file.
+POS_READY: enclosed within jQuery(document).ready(). This is the default value. Note that by using this position, the method will automatically register the jQuery js file.

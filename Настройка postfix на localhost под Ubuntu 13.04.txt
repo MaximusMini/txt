@@ -1,0 +1,63 @@
+Настройка postfix на localhost под Ubuntu 13.04
+(http://onedev.net/post/277)
+(http://www.8host.com/blog/ustanovka-i-nastrojka-smtp-servera-peredachi-soobshhenij-postfix-v-ubuntu-14-04-2/)
+
+Postfix как локальный SMTP-ретранслятор	http://vladimir-stupin.blogspot.com.by/2014/06/postfix-smtp.html
+Почтовый сервер Postfix					http://help.ubuntu.ru/wiki/postfix
+
+1	установка postfix 		sudo apt-get install postfix ca-certificates
+							sudo apt-get remove purge postfix - удаление
+
+2	В доступных режимах работы выбрать 
+		«Internet Site»
+		название хоста «localhost»
+		или используйте имя вашей машинки (у меня, например e5530)
+
+3	Правим конфигурационный файл MTA Postfix			/etc/postfix/main.cf:
+		# название хоста, такое же как указали в первичной настройке
+		myhostname = e5530
+		alias_maps = hash:/etc/aliases
+		alias_database = hash:/etc/aliases
+		mydestination = e5530, localhost.localdomain, localhost
+		relayhost = [smtp.gmail.com]:587
+		mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+		mailbox_command = procmail -a "$EXTENSION"
+		mailbox_size_limit = 10000
+		recipient_delimiter = +
+		inet_interfaces = all
+
+		# этот конфиг нужно добавить
+		smtp_destination_rate_delay = 60
+		relay_destination_rate_delay = 60
+		smtp_sasl_auth_enable = yes
+		smtp_sasl_password_maps = hash:/etc/postfix/sasl_password
+		smtp_sasl_security_options = noanonymous
+		transport_maps = hash:/etc/postfix/transport
+		smtp_generic_maps = hash:/etc/postfix/generic
+		smtp_tls_CAfile = /etc/postfix/cacert.pem
+
+		# строка включения TLC должна идти после его настроек
+		smtp_use_tls = yes
+
+4			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

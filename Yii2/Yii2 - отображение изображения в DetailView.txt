@@ -1,0 +1,23 @@
+Yii - отображение изображения в DetailView
+
+yii2 detail view image - http://stackoverflow.com/questions/26896529/yii2-render-an-image-in-detailview 
+
+<?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'id',
+            'name',
+            //'photo',
+            [
+				'attribute'=>'photo',
+				'value'=>$model->photo,
+				'format' => ['image',['width'=>'100','height'=>'100']],
+			],
+            [
+                'attribute' => 'birth_date',
+                'format' => ['date', 'dd-MM-Y'],
+                        ],  
+        'mobile',
+            ],
+
+    ]) ?>

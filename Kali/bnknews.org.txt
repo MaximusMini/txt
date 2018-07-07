@@ -1,0 +1,191 @@
+bnknews.org
+
+whatweb bnknews.org
+IP	185.104.45.72
+
+Уязвимости (wpscan)
+-------------------
+1
+[+] WordPress version 4.5.9 (Released on 2017-05-16) identified from meta generator, readme, links opml
+[!] 1 vulnerability identified from the version number
+
+[!] Title: WordPress 2.3-4.7.5 - Host Header Injection in Password Reset
+    Reference: https://wpvulndb.com/vulnerabilities/8807
+    Reference: https://exploitbox.io/vuln/WordPress-Exploit-4-7-Unauth-Password-Reset-0day-CVE-2017-8295.html
+    Reference: http://blog.dewhurstsecurity.com/2017/05/04/exploitbox-wordpress-security-advisories.html
+    Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8295
+[!] Title: AdRotate <= 3.9.4 - clicktracker.php track Parameter SQL Injection
+    Reference: https://wpvulndb.com/vulnerabilities/6597
+2
+Name: photo-gallery - v1.3.30
+	Location: http://bnknews.org/wp-content/plugins/photo-gallery/
+	[!] Title: Photo Gallery by WD <= 1.3.35 - Authenticated SQL Injection
+    		Reference: https://wpvulndb.com/vulnerabilities/8804
+	[!] Title: Photo Gallery by WD <= 1.3.42 - Authenticated Path Traversal
+    		Reference: https://wpvulndb.com/vulnerabilities/8849
+
+Уязвимости (https://sitecheck.sucuri.net)
+-----------------------------------------
+Warning: Malicious Code Detected on This Website!
+	Website: 	bnknews.org
+	Status: 	Infected With Malware. Immediate Action is Required.
+	Web Trust: 	Not Currently Blacklisted (10 Blacklists Checked)
+
+
+
+
+
+
+
+nmap -sV 185.104.45.72 --proxies socks4://127.0.0.1:9050
+--------------------------------------------------------
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+
+
+nmap -Pn bnknews.org --proxies socks4://127.0.0.1:9050
+--------------------------------------------------------
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.25 seconds
+
+
+nmap -sV bnknews.org --proxies socks4://127.0.0.1:9050
+--------------------------------------------------------
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 4.43 seconds
+
+
+
+wpscan -u bnknews.org -e p
+_______________________________________________________________
+        __          _______   _____                  
+        \ \        / /  __ \ / ____|                 
+         \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+          \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \ 
+           \  /\  /  | |     ____) | (__| (_| | | | |
+            \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+        WordPress Security Scanner by the WPScan Team 
+                       Version 2.9.2
+          Sponsored by Sucuri - https://sucuri.net
+   @_WPScan_, @ethicalhack3r, @erwan_lr, pvdl, @_FireFart_
+_______________________________________________________________
+
+[i] The remote host tried to redirect to: http://www.bnknews.org/
+[?] Do you want follow the redirection ? [Y]es [N]o [A]bort, default: [N]n
+[+] URL: http://bnknews.org/
+[+] Started: Sun Jul  2 15:21:33 2017
+
+[+] robots.txt available under: 'http://bnknews.org/robots.txt'
+[+] Interesting entry from robots.txt: Sitemap: http://bnknews.org/sitemap.xml
+[!] The WordPress 'http://bnknews.org/readme.html' file exists exposing a version number
+[!] Full Path Disclosure (FPD) in 'http://bnknews.org/wp-includes/rss-functions.php': 
+[+] Interesting header: SERVER: nginx
+[+] XML-RPC Interface available under: http://bnknews.org/xmlrpc.php
+
+[+] WordPress version 4.5.9 (Released on 2017-05-16) identified from meta generator, readme, links opml
+[!] 1 vulnerability identified from the version number
+
+[!] Title: WordPress 2.3-4.7.5 - Host Header Injection in Password Reset
+    Reference: https://wpvulndb.com/vulnerabilities/8807
+    Reference: https://exploitbox.io/vuln/WordPress-Exploit-4-7-Unauth-Password-Reset-0day-CVE-2017-8295.html
+    Reference: http://blog.dewhurstsecurity.com/2017/05/04/exploitbox-wordpress-security-advisories.html
+    Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8295
+
+[+] WordPress theme in use: twentysixteen - v1.2
+
+[+] Name: twentysixteen - v1.2
+ |  Location: http://bnknews.org/wp-content/themes/twentysixteen/
+ |  Readme: http://bnknews.org/wp-content/themes/twentysixteen/readme.txt
+[!] The version is out of date, the latest version is 1.3
+ |  Style URL: http://bnknews.org/wp-content/themes/twentysixteen/style.css
+ |  Referenced style.css: http://www.bnknews.org/wp-content/themes/twentysixteen/style.css
+ |  Theme Name: Twenty Sixteen
+ |  Theme URI: https://wordpress.org/themes/twentysixteen/
+ |  Description: Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthe...
+ |  Author: the WordPress team
+ |  Author URI: https://wordpress.org/
+
+[+] Enumerating installed plugins (only ones marked as popular) ...
+
+   Time: 00:05:00 <=========================================================> (1500 / 1500) 100.00% Time: 00:05:00
+
+[+] We found 8 plugins:
+
+[+] Name: addthis - v5.3.4
+ |  Location: http://bnknews.org/wp-content/plugins/addthis/
+ |  Readme: http://bnknews.org/wp-content/plugins/addthis/readme.txt
+[!] The version is out of date, the latest version is 5.3.5
+
+[+] Name: adrotate
+ |  Latest version: 4.4 
+ |  Location: http://bnknews.org/wp-content/plugins/adrotate/
+
+[!] We could not determine a version so all vulnerabilities are printed out
+
+[!] Title: AdRotate <= 3.9.4 - clicktracker.php track Parameter SQL Injection
+    Reference: https://wpvulndb.com/vulnerabilities/6597
+    Reference: http://packetstormsecurity.com/files/125330/
+    Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1854
+    Reference: https://secunia.com/advisories/57079/
+    Reference: https://www.exploit-db.com/exploits/31834/
+[i] Fixed in: 3.9.5
+
+[!] Title: AdRotate <= 3.6.6 - SQL Injection 
+    Reference: https://wpvulndb.com/vulnerabilities/6598
+    Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4671
+    Reference: https://secunia.com/advisories/46814/
+    Reference: https://www.exploit-db.com/exploits/18114/
+[i] Fixed in: 3.6.8
+
+[!] Title: AdRotate <= 3.6.5 - SQL Injection 
+    Reference: https://wpvulndb.com/vulnerabilities/6599
+    Reference: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4671
+    Reference: https://www.exploit-db.com/exploits/17888/
+[i] Fixed in: 3.6.8
+
+[+] Name: adsense-manager
+ |  Latest version: 4.0.3 
+ |  Location: http://bnknews.org/wp-content/plugins/adsense-manager/
+
+[+] Name: category-posts - v4.7.2
+ |  Latest version: 4.7.2 (up to date)
+ |  Location: http://bnknews.org/wp-content/plugins/category-posts/
+ |  Readme: http://bnknews.org/wp-content/plugins/category-posts/readme.txt
+
+[+] Name: photo-gallery - v1.3.30
+ |  Location: http://bnknews.org/wp-content/plugins/photo-gallery/
+ |  Readme: http://bnknews.org/wp-content/plugins/photo-gallery/readme.txt
+[!] The version is out of date, the latest version is 1.3.46
+
+[!] Title: Photo Gallery by WD <= 1.3.35 - Authenticated SQL Injection
+    Reference: https://wpvulndb.com/vulnerabilities/8804
+    Reference: http://www.defensecode.com/advisories/DC-2017-02-011_WordPress_WebDorado_Gallery_Plugin_Advisory.pdf
+[i] Fixed in: 1.3.36
+
+[!] Title: Photo Gallery by WD <= 1.3.42 - Authenticated Path Traversal
+    Reference: https://wpvulndb.com/vulnerabilities/8849
+    Reference: https://security.dxw.com/advisories/path-traversal-in-photo-gallery-may-allow-admins-to-read-most-files-on-the-filesystem/
+    Reference: https://plugins.trac.wordpress.org/changeset/1667128/photo-gallery
+[i] Fixed in: 1.3.43
+
+[+] Name: popups
+ |  Latest version: 1.7.2 
+ |  Location: http://bnknews.org/wp-content/plugins/popups/
+
+[+] Name: recent-posts-widget-with-thumbnails - v5.0
+ |  Latest version: 5.0 (up to date)
+ |  Location: http://bnknews.org/wp-content/plugins/recent-posts-widget-with-thumbnails/
+ |  Readme: http://bnknews.org/wp-content/plugins/recent-posts-widget-with-thumbnails/README.txt
+
+[+] Name: wordpress-seo - v4.4
+ |  Location: http://bnknews.org/wp-content/plugins/wordpress-seo/
+ |  Readme: http://bnknews.org/wp-content/plugins/wordpress-seo/readme.txt
+[!] The version is out of date, the latest version is 4.9
+
+[+] Finished: Sun Jul  2 15:27:30 2017
+[+] Requests Done: 1619
+[+] Memory used: 142.098 MB
+[+] Elapsed time: 00:05:56
+
+
+

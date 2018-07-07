@@ -1,0 +1,18 @@
+ZF2-файл module.config.php
+
+// module/..../config/module.config.php:
+return array(
+    'controllers' => array(
+        'invokables' => array(
+            'Album\Controller\Album' => 'Album\Controller\AlbumController',
+        ),
+    ),
+    'view_manager' => array(
+        'template_path_stack' => array(
+            'album' => __DIR__ . '/../view',
+        ),
+    ),
+);
+
+1.	Массив 'controllers' содержит описание всех контроллеров модуля
+		имя контроллера должно быть уникальным в пределах всего модуля.

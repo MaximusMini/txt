@@ -1,0 +1,20 @@
+SQL - условия выборки для WHERE
+
+	= (равно)
+	> (больше)
+	< (меньше)
+	>= (больше или равно)
+	<= (меньше или равно)
+	!= (не равно)
+	IS NOT NULL 		- Отбираются строки, имеющие значения в указанном поле
+	IS NULL 			- Отбираются строки, не имеющие значения в указанном поле
+	BETWEEN  			- Отбираются значения, находящиеся между указанными
+							SELECT * FROM topics WHERE id_author BETWEEN 1 AND 3;
+	IN					- Отбираются значения, соответствующие указанным
+							SELECT * FROM topics WHERE id_author IN (1, 4);
+	NOT IN 				- Отбираются значения, кроме указанных
+							SELECT * FROM topics WHERE id_author NOT IN (1, 4);
+	LIKE 				- Отбираются значения, соответствующие образцу
+							SELECT * FROM topics WHERE topic_name LIKE 'вел%';
+	NOT LIKE			- Отбираются значения, не соответствующие образцу
+							SELECT * FROM topics WHERE topic_name NOT LIKE 'вел%';

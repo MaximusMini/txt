@@ -1,0 +1,5 @@
+SQL - посчитать уникальные записи
+
+	SELECT COUNT(DISTINCT user_id) FROM orders
+	
+	SELECT COUNT(DISTINCT name_group) FROM id_members

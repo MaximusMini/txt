@@ -1,0 +1,11 @@
+
+groups.getById - Возвращает информацию о заданном сообществе или о нескольких сообществах.
+	(https://vk.com/dev/groups.getById)
+	https://api.vk.com/method/groups.getById?group_ids=fanat_khl&fields=description&v=5.69
+	https://api.vk.com/method/groups.getById?group_ids=fanat_khl&fields=members_count&v=5.69 - количество участников
+	
+	
+groups.getMembers - Возвращает список участников сообщества
+	(https://vk.com/dev/groups.getMembers)
+	https://api.vk.com/method/groups.getMembers?group_id=fanat_khl&v=5.69 - id первых 1000 участников
+	https://api.vk.com/method/groups.getMembers?group_id=fanat_khl&offset=1000&v=5.69 - id участников с 1001 по 2000

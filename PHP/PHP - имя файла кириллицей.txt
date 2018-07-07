@@ -1,0 +1,16 @@
+PHP - имя файла кириллицей
+
+	для записи файла кирилицей необходимо осуществить перекодировку строки - имени файла
+	
+	допустим $name_file='имя_файла.txt'
+	
+	чтобы его записать правильно нужно
+		iconv("UTF-8", "Windows-1251//TRANSLIT", $text)
+	
+	iconv()
+		http://php.net/manual/ru/function.iconv.php
+		
+	
+	Определение кодировки символов
+	mb_detect_encoding()
+		http://php.net/manual/ru/function.mb-detect-encoding.php

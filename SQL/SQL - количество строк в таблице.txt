@@ -1,0 +1,14 @@
+SQL - количество строк в таблице
+	https://myrusakov.ru/sql-count.html
+	https://www.site-do.ru/db/sql8.php
+	http://sqlinfo.ru/articles/info/15.html
+	
+	
+	SELECT COUNT(*) FROM `table`
+		узнать просто количество записей в таблице
+	
+	SELECT COUNT(*) FROM `table` WHERE `field_1`='value_1'
+		массив, содержащий элемент COUNT(*) со значением количества записей в таблице "table", где поле "field_1" имеет значение "value_1"
+		
+	SELECT COUNT(DISTINCT `field_1`) FROM `table`
+		количество уникальных записей в таблице

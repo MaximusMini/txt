@@ -1,0 +1,38 @@
+Данные в облаках
+
+	
+storage.files2020@gmail.com
+---------------------------
+	AJAX
+		AJAX. Разработка веб - приложений для Web 2.0 (2013)
+	API
+		GOOGLE-Работа с Google средствами PHP
+		Работа с API VK (канал Bookamba Chan)
+		Работа с API VK через JavaScript
+		Работа с API Вконтакте (канал S-GET)
+		ТОП СКРИПТЫ ДЛЯ ВК
+		API vk.com. Создание приложения (MyRusakov)
+		PHP Google Sheets API, OAuth, Google Таблицы api, авторизация
+	
+	BOOTSTRAP
+		Адаптивная верстка-Pit
+		Уроки Bootstrap 3-Pit
+		Фреймворк Bootstrap - webformyself
+		Фреймворк Bootstrap. Практика адаптивной верстки от А до Я
+		Bootstrap_ ТОП 5 полезностей и хаков, о которых вы не знали
+		
+	EMAIL
+		Верстка email писем (JuniorDeveloper)
+		Как работать с сервисом Gmail (Андрей Сухов)
+
+		
+ebook.flash.mi@gmail.com
+-------------------------
+	eBook (книги с флешки)
+
+
+
+
+
+
+	

@@ -1,0 +1,97 @@
+Создается админпанель для управления постами (таблица post)
+
+При создании админки используется модульный способ - админка создается в отдельном модуле. 
+Для этого создается новая папка с именем modules в корне приложения.
+Модуль - это такое же приложение, т.е. структура соответствует структуре основного приложения.
+Генерация необходимого кода осуществляется с помощью gii.
+
+1	Создание модуля - используется Module Generator
+		Module Class	- app\modules\admin\Module(путь к классу модуля)
+		Module ID		- admin (прописывается автоматически)
+		-> Preview
+		-> Generate
+		
+		в результате генерируется
+			modules\admin\Module.php
+			modules\admin\controllers\DefaultController.php
+			modules\admin\views\default\index.php
+
+2	В настройках приложения (config/web/php) подключаем созданный модульный
+		<?php
+			......
+			'modules' => [
+				'admin' => [
+					'class' => 'app\modules\admin\Module',
+				],
+			],
+			......
+
+3	Проверяем созданные файлы
+		http://j-rusina/web/index/php?r=admin
+		
+		должны увидеть дефолтный контроллер и дефолтный вид для данного контроллера
+			admin/default/index
+			This is the view content for action "index". The action belongs to the controller "app\modules\admin\controllers\DefaultController" in the "admin" module.
+
+			You may customize this page by editing the following file:
+			C:\OpenServer\domains\j-rusina\modules\admin\views\default\index.php
+
+4	Генерируем модель для таблицы post - используется Model Generator
+		Table Name	- post
+		Model Class	- post
+		Namespace	- app\modules\admin\models
+		-> Preview
+		-> Generate
+
+5	CRUD Generator
+		Model Class			- app\modules\admin\models\Post
+		Search Model Class	- (не заполняется)
+		Controller Class	- app\modules\admin\controllers\PostController
+		View Path			- @app/modules/admin/views/post
+		-> Preview
+			modules\admin\controllers\PostController.php	
+			modules\admin\views\post\_form.php		
+			modules\admin\views\post\create.php
+			modules\admin\views\post\index.php
+			modules\admin\views\post\update.php
+			modules\admin\views\post\view.php
+		-> Generate
+		
+6	Проверяем созданные файлы
+		http://j-rusina/web/index/php?r=admin/news
+
+7	В настройках модуля админки(config/web.php) меняем дефолтный маршрут
+		'modules' => [
+				'admin' => [
+					'class' => 'app\modules\admin\Module',
+	                'defaultRoute' => 'news/index', //добавляем строку
+				],
+			],
+
+			
+8	Для вывода постов в таблице админки используется компонент GridView
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

@@ -1,0 +1,121 @@
+Настройка DNS зоны относится к подготовительным операциям перед развертыванием почтового сервера
+
+	для этого нужен выделенный IP
+	доменное имя
+	доступ к управлению DNS зоной доменного имя
+
+1 Какие записи содержит его DNS зона?
+
+	SOA запись - описание зоны
+	NS записи, указывающие на сервера имен (DNS сервера) обслуживающие данный домен, это будут сервера регистратора или хостинг провайдера
+	
+	A - запись имени, должна указывать на IP-адрес вашего сервера
+	
+	host -t a jennifer2.iam.by
+	jennifer2.iam.by has address 31.130.201.237
+	
+	host 31.130.201.237
+	Host 237.201.130.31.in-addr.arpa. not found: 3(NXDOMAIN)
+	
+	Записи DNS для домена JENNIFER2.IAM.BY (http://www.whois-service.ru/dns/)
+	Resource records
+	jennifer2.iam.by.	MX.	10.	mail.jennifer2.iam.by.	IN.	14400.	
+	jennifer2.iam.by.	TXT.	v=spf1 a mx ip4:31.130.201.140 ~all.	IN.	14400.	
+	jennifer2.iam.by.	A.	31.130.201.237.	IN.	14400.	
+	jennifer2.iam.by.	SOA.	ns1.besthost.by.	hostmaster.jennifer2.iam.by.	2015111500.	14400.	3600.	1209600.	86400.	IN.	14400.	
+	jennifer2.iam.by.	NS.	ns1.besthost.by.	IN.	14400.	
+	jennifer2.iam.by.	NS.	ns2.besthost.by.	IN.	14400.	
+	Authoritative Name Servers
+	Additional Records
+	mail.jennifer2.iam.by.	A.	31.130.201.237.	IN.	14400.	
+
+
+2 Для работы почтового сервера нужно создать MX запись
+	example.com. IN MX 10 mail.example.com.
+	Цифра 10 определяет приоритет сервера, чем она меньше, тем выше приоритет
+	Кстати, DNS зона уже может содержать MX запись вида:	example.com. IN MX 0 example.com.
+	Oбычно эта запись автоматически создается хостинг провайдером при размещении сайта, ее нужно удалить.
+	
+	jennifer2.iam.by. IN MX 20 mail.jennifer2.iam.by.
+	-bash: jennifer2.iam.by.: command not found
+	
+	$ host -t mx jennifer2.iam.by (определяет mx запись домена)
+	jennifer2.iam.by mail is handled by 10 mail.jennifer2.iam.by.
+
+3 Теперь создадим A запись для mail.example.com
+	mail.example.com. IN A 11.22.33.44
+	Теперь вся почта для домена example.com будет направляться хосту mail имеющему адрес 11.22.33.44
+	в то-же время сайт example.com продолжит работать на сервере провайдера по адресу 22.11.33.44
+	
+	mail.jennifer2.iam.by. IN A 11.22.33.44
+	-bash: mail.jennifer2.iam.by.: command not found
+
+	$ host -t a jennifer2.iam.by
+	jennifer2.iam.by has address 31.130.201.237
+	
+	проверим запись A для mail.jennifer2.iam.by.
+	host -t a mail.jennifer2.iam.by.
+	mail.jennifer2.iam.by has address 31.130.201.237
+	т.е. такой же IP как и jennifer2.iam.by
+
+	На этом настройку прямой DNS зоны можно считать законченной
+
+4 Остается самое интересное - обратная зона.
+	Обратная зона управляется провайдером, выдавшим вам IP адрес и самостоятельно управлять ей вы не можете 
+	(если только вы не владелец блока IP адресов). Но добавить как минимум одну запись в обратную зону необходимо. 
+	Как мы писали в прошлой статье, многие почтовые сервера проверяют PTR записи (записи обратной зоны) 
+	для отправляющего сервера и при их отсутствии или несовпадении с доменом отправителя такое письмо будет отклонено. 
+	Поэтому попросите провайдера добавить для вас запись вида:
+	44.33.22.11.in-addr.arpa. IN PTR mail.example.com.
+	
+	host -t ptr mail.jennifer2.iam.by.
+	mail.jennifer2.iam.by has no PTR record
+	
+	host -t ptr jennifer2.iam.by.
+	jennifer2.iam.by has no PTR record
+
+
+
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

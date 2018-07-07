@@ -1,0 +1,16 @@
+ZF2-файл Module.php
+
+1.	Файл Module.php необходим для ModuleManager
+
+2.	В файле должны быть два метода
+		getAutoloaderConfig()
+		getConfig()
+		
+		эти методы автоматически вызываются ModuleMeneger
+
+3.	getConfig() - должен загружать файл config/module.config.php - конфигурация модуля
+		return include __DIR__ . '/config/module.config.php';
+		
+3.	Создаем файл autoload_classmap.php  с содержимым
+		return array();
+

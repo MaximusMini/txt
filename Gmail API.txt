@@ -1,0 +1,179 @@
+Gmail API
+
+1. создать учетные данные 
+	https://console.developers.google.com/start/api?id=gmail
+	
+	
+	
+создать через composer проект в папке domains
+
+
+https://developers.google.com/api-client-library/php/auth/web-app#creatingcred
+Использование клиентской библиотеки Google API для PHP для реализации авторизации OAuth 2.0 для доступа к API Google
+
+Небходимые условия - Prerequisites
+
+1. Включить API для проекта - (Enable APIs for your project)
+	- открыть библиотеку API - https://console.developers.google.com/apis/library?project=ultra-tube-168215
+	- выбрать нужный API и включить его
+
+2. Создать учетные данные (Create authorization credentials)
+	Любое приложение, использующее OAuth 2.0 для доступа к API Google, должно иметь авторизационные учетные данные, которые идентифицируют приложение на сервере OAuth 2.0 Google.
+	После создания учетных данных для проекта, веб-приложение использует эти данные для доступа к включенным API-интерфейсам.
+	- открыть страницу для создания учетных данных - https://console.developers.google.com/apis/credentials
+	- выбрать "Создать учетные данные" (Create credentials) -> "Идентификатор клиента OAuth" (OAuth client ID)
+	- выбрать тип приложения "Веб-приложение" (Web application)
+		Если приложение использует один из языков программирования (PHP, Java, Python, Ruby, and .NET), то необходимо указать параметр "Разрешенные URI перенаправления" (redirect URIs). URI перенаправления - это конечная точка, которой сервер Oauth 2.0 может отослать ответ
+	- в разделе "Разрешенные URI перенаправления" указать -  http: // localhost: 8080 (при тестировании можно использовать URI локальной машины)
+
+3. После создания учетных данных загрузить файл client_secrets.json
+
+4. Определение областей доступа (Identify access scopes)
+	Области позволяют вашему приложению запрашивать доступ к ресурсам, которые ему нужны, а также позволяют пользователям контролировать объем доступа, который они предоставляют вашему приложению. Таким образом, может иметь место обратная зависимость между количеством запрашиваемых областей и вероятностью получения согласия пользователя.
+
+	Прежде чем приступать к реализации авторизации OAuth 2.0, мы рекомендуем вам определить области, в которых вашему приложению потребуется разрешение для доступа.
+	
+	Запрос приложения на доступ к областям происходит через процесс дополнительной авторизации
+	
+	Список областей, которые можно использовать для доступа к API Google находится - https://developers.google.com/identity/protocols/googlescopes
+	
+	Для Gmail раздел - "Gmail API, v1"
+	
+5. Получение токена доступа (Obtaining OAuth 2.0 access tokens)
+	
+	Шаг 1 - Натройка объекта "клиент" (Configure the client object)
+		На первом этапе настраивается клиентский объект, который в дальнейшем используется приложение для получения авторизации пользователя и авторизации API-запросов.
+		
+		В объекте клиента указываются области доступа приложения - эти значения будут отображаться на экране согласия
+		
+		Используйте созданный файл client_secrets.json, чтобы настроить клиентский объект в приложении. При настройке клиентского объекта вы указываете области, к которым ваше приложение должно обращаться, а также URL-адрес конечной точки аутентификации приложения, который будет обрабатывать ответ с сервера OAuth 2.0.
+		
+		Пример: запрос доступа к Google Disk только для чтения в режиме  offline
+		
+		$client = new Google_Client();
+		$client->setAuthConfig('client_secrets.json');
+		$client->setAccessType("offline");        // offline access
+		$client->setIncludeGrantedScopes(true);   // incremental auth
+		$client->addScope(Google_Service_Drive::DRIVE_METADATA_READONLY);
+		$client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
+		
+		Объект клиента используется нашим приложением для выполнения операций OAuth 2.0 - генерирование URL запроса авторизации, применение токенов доступа
+		
+	Шаг 2 - Перенаправление на сервер OAuth 2.0 от Google (Redirect to Google's OAuth 2.0 server)
+		Создать URL-адрес для запроса доступа с сервера OAuth 2.0 от Google:
+			$auth_url = $client->createAuthUrl();
+		Перенаправление пользователя на $auth_url
+			header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
+			
+	Шаг 3 - Запрос согласия у пользователя
+		На этом шаге отображается окно согласия, в котором отображается имя приложения и области к которым запрашивается доступ
+		Приложения на этом этапе делать ничего не нужно
+	
+	Шаг 4 - Обработка ответа от сервера Oauth 2.0 (Handle the OAuth 2.0 server response)
+		Сервер OAuth 2.0 отвечает на запрос доступа вашего приложения, используя URL ("Разрешенные URI перенаправления"), указанный в запросе.
+		
+		Если пользователь одобряет запрос доступа, тогда ответ содержит код авторизации. Если пользователь не одобряет запрос, ответ содержит сообщение об ошибке.
+		
+		В случае одобрения доступа вернется параметр "code" - код авторизации
+			https://oauth2.example.com/auth?code=4/P7q7W91a-oMsCeLvIaQm6bTrgtp7
+			
+		В случае отказа
+			https://oauth2.example.com/auth?error=access_denied
+			
+		Пример запроса и ответа сервера OAuth 2.0
+			запрос
+			https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&redirect_uri=http%3A%2F%2Foauth2.example.com%2Fcallback&response_type=code&client_id=client_id
+			
+			после выполнения запроса происходит перенаправление на
+				http://localhost/oauth2callback.php
+				(указан в настройках объекта - $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
+				если страницы oauth2callback.php не существует сервер выдаст ошибку 404
+	
+	Шаг 5 - Обмен кода авторизации на токен доступа (Exchange authorization code for refresh and access tokens)
+		После получения "code" - кода авторизации его необходимо поменять на токен доступа, для этого используется метод authenticate
+			$client->authenticate($_GET['code']);
+		Сам токен доступа можно получить следующим образом
+			$access_token = $client->getAccessToken();
+
+6. Вызов API Google (Calling Google APIs)
+	Для вызовы API необходимо использовать токен доступа
+	
+	Полученный после обмена токен доступа нужно записать в сессию пользователя
+		$client->setAccessToken($access_token);
+	
+	Создать объект службы API которого необходимо использовать
+		$drive = new Google_Service_Drive($client);
+
+	Вызвать API с помощью интерфейса, предоставляемого объектом службы. 
+	Например, чтобы отобразить файлы на Google Диске с проверкой подлинности пользователя:
+		$files = $drive->files->listFiles(array())->getItems();
+
+7. Полный пример (Complete example)
+	В примере выводится JSON-форматированный список файлов на Google Диске пользователя после того, как он аутентифицируется и дает согласие на доступ приложения к файлам Диска пользователя.
+			
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	

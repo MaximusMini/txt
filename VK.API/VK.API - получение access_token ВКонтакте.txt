@@ -1,0 +1,77 @@
+VR.API - получение access_token ВКонтакте
+http://all-for-vkontakte.ru/catalog/access-token-vkontakte
+
+Способ получения токена заключается в переходе по специальной ссылке, содержащей ID некоторого приложения ВКонтакте, вида:
+https://oauth.vk.com/authorize?client_id=ID_ПРИЛОЖЕНИЯ&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=page&response_type=token
+
+1	Получение токена через собственное приложение.
+		перейти на страницу управления своими приложениями по ссылке vk.com/apps?act=manage
+		нажать на кнопку «Создать приложение»
+		Введите название для будущего приложения, например, «Получение access_token»
+		убедитесь, что стоит галочка «Standalone-приложение»
+		нажмите на кнопку «Подключить приложение»
+		!!! Далее потребуется утвердить приложение, получив на телефон код подтверждения и введя его в специальное поле.
+		После подтверждения у вас откроется страница с информацией о созданном приложении.
+		В меню слева кликните на пункт «Настройки»
+		Там и располагается ваш так называемый client_id, то есть ID вашего приложения ВКонтакте.
+		Этот ID нужно скопировать и вставить в нашу ссылку вместо ID_ПРИЛОЖЕНИЯ.
+		Должно получиться примерно так: https://oauth.vk.com/authorize?client_id=5563738&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=page&response_type=token
+		Дальше, при необходимости получить ключ доступа вам нужно просто перейти по этой ссылке. 
+		
+2	Получение токена через официальное приложение ВКонтакте. 
+		Этот метод абсолютно идентичен предыдущему за исключением того, что вы не создаёте собственное приложение, а используете уже созданное, официальное приложение ВКонтакте, которому можно доверять.
+		В качестве примера мы возьмём приложение ВКонтакте для Android.
+		Его ID следующий: 2890984.
+		В итоге, подставляя его в ссылку, она примет следующий вид: 	https://oauth.vk.com/authorize?client_id=2890984&scope=notify,photos,friends,audio,video,notes,pages,docs,status, questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=page&response_type=token
+		
+3	 Получив ссылку по одному из способов выше, вы должны перейти по ней и разрешить предоставляемые права доступа. 
+		После этого в адресной строке браузера и появится желаемый access_token ВКонтакте.
+		Его нужно вручную скопировать, выделив ключ, начинающийся после фразы access_token= и заканчивающийся перед фразой &expires_in. 
+		
+		
+Приложение в аккаунте Андрей Сахаров
+			ID приложения:				5406772
+			Защищённый ключ:			WSXmsNtu6Jz7b4SRb22X
+			Сервисный ключ доступа:		bf6f9806bf6f9806bf6f980652bf3d1832bbf6fbf6f9806e55918f21216d477576a5ae4
+			ссылка для получения токена
+			https://oauth.vk.com/authorize?client_id=5406772&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=page&response_type=token
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

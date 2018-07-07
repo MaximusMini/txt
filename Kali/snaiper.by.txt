@@ -1,0 +1,82 @@
+wpscan --url www.snaiper.by --enumerate u --proxy 127.0.0.1:8118
+----------------------------------------------------------------[+] URL: http://www.snaiper.by/
+[+] Started: Fri Jul  7 21:44:12 2017
+
+[+] robots.txt available under: 'http://www.snaiper.by/robots.txt'
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-admin
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-includes
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-login.php
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-register.php
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-content/themes
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-content/plugins
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-content/upgrade
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-content/themes_backup
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-content/cache
+[+] Interesting entry from robots.txt: http://www.snaiper.by/xmlrpc.php
+[+] Interesting entry from robots.txt: http://www.snaiper.by/template.html
+[+] Interesting entry from robots.txt: http://www.snaiper.by/wp-comments
+[+] Interesting entry from robots.txt: http://www.snaiper.by/cgi-bin
+[+] Interesting entry from robots.txt: http://www.snaiper.by/trackback
+[+] Interesting entry from robots.txt: http://www.snaiper.by/feed
+[+] Interesting entry from robots.txt: http://www.snaiper.by/comments
+[+] Interesting entry from robots.txt: http://www.snaiper.by/comment-page
+[+] Interesting entry from robots.txt: http://www.snaiper.by/replytocom=
+[+] Interesting entry from robots.txt: http://www.snaiper.by/author
+[+] Interesting entry from robots.txt: /?author=
+[+] Interesting entry from robots.txt: http://www.snaiper.by/tag
+[+] Interesting entry from robots.txt: /?feed=
+[+] Interesting entry from robots.txt: /?s=
+[+] Interesting entry from robots.txt: /?se=
+[!] The WordPress 'http://www.snaiper.by/readme.html' file exists exposing a version number
+[+] Interesting header: SERVER: nginx/1.10.3
+[+] Interesting header: X-POWERED-BY: PHP/5.5.38
+[!] Registration is enabled: http://www.snaiper.by/wp-login.php?action=register
+
+[+] WordPress version 4.8 (Released on 2017-06-08) identified from meta generator, links opml
+
+[+] WordPress theme in use: theme48156 - v3.0
+
+[+] Name: theme48156 - v3.0
+ |  Location: http://www.snaiper.by/wp-content/themes/theme48156/
+ |  Style URL: http://www.snaiper.by/wp-content/themes/theme48156/style.css
+ |  Referenced style.css: http://snaiper.by/wp-content/themes/theme48156/style.css
+ |  Theme Name: theme48156
+ |  Theme URI: http://template-help.com/
+ |  Description: A theme for Wordpress 3.7.x + from Template-Help.com Collection
+ |  Author: Template_Help.com
+
+[+] Detected parent theme: CherryFramework - v3.1.5
+
+[+] Name: CherryFramework - v3.1.5
+ |  Location: http://www.snaiper.by/wp-content/themes/CherryFramework/
+ |  Readme: http://www.snaiper.by/wp-content/themes/CherryFramework/readme.txt
+ |  Style URL: http://www.snaiper.by/wp-content/themes/CherryFramework/style.css
+ |  Theme Name: cherry
+ |  Theme URI: //info.template-help.com/help/
+ |  Description: A theme for Wordpress 3.8.x
+ |  Author: Template_Help.com
+ |  Author URI: //info.template-help.com/help/
+
+[+] Enumerating plugins from passive detection ...
+[+] No plugins found
+
+[+] Enumerating usernames ...
+[!] Stop User Enumeration plugin detected, results might be empty. However a bypass exists for v1.2.8 and below, see stop_user_enumeration_bypass.rb in /usr/share/wpscan
+[+] Identified the following 3 user/s:
+    +----+--------+-----------------+
+    | Id | Login  | Name            |
+    +----+--------+-----------------+
+    | 1  | admin  | Draxxry         |
+    | 2  | master | master          |
+    | 4  | madmax | Дмитрий Панасюк |
+    +----+--------+-----------------+
+[!] Default first WordPress username 'admin' is still used
+
+[+] Finished: Fri Jul  7 21:45:58 2017
+[+] Requests Done: 102
+[+] Memory used: 17.266 MB
+[+] Elapsed time: 00:01:46
+
+wpscan --url www.snaiper.by --enumerate p --proxy 127.0.0.1:8118
+
+

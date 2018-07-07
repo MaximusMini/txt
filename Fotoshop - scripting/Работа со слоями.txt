@@ -1,0 +1,20 @@
+
+1	Обращение к активному слою
+		app.activeDocument.activeLayer
+		
+2	Имя активного слоя
+		app.activeDocument.activeLayer.name
+		
+3	Переименования активного слоя
+		app.activeDocument.activeLayer.name = 'Новое имя слоя'
+		
+4	Скрыть/показать активный слой
+		app.activeDocument.activeLayer.visible = false; // true
+		
+5	Подвигать содержимое слоя по холсту — метод translate
+		app.activeDocument.activeLayer.translate(X, Y);
+		
+6	Количество слоев в документе
+		countLayers=app.activeDocument.layers.length;
+		alert(countLayers);
+		

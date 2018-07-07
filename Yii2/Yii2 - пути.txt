@@ -1,0 +1,17 @@
+index
+http://j-rusina/web/index.php?r=admin%2Fredaction%2Findex
+
+/index
+http://j-rusina/web/index.php?r=index
+
+./index
+http://j-rusina/web/index.php?r=admin%2F.%2Findex
+
+../index
+http://j-rusina/web/index.php?r=admin%2F..%2Findex
+
+/admin/index
+http://j-rusina/web/index.php?r=admin%2Findex
+
+/admin/news/index
+http://j-rusina/web/index.php?r=admin%2Fnews%2Findex

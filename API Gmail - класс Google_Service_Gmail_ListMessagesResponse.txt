@@ -1,0 +1,29 @@
+API Gmail - класс Google_Service_Gmail_ListMessagesResponse
+
+Методы класса
+	Array ( [0] => setMessages 
+			[1] => getMessages 
+			[2] => setNextPageToken 
+			[3] => getNextPageToken 
+			[4] => setResultSizeEstimate 
+			[5] => getResultSizeEstimate 
+			[6] => rewind 
+			[7] => current 
+			[8] => key 
+			[9] => next 
+			[10] => valid 
+			[11] => count 
+			[12] => offsetExists 
+			[13] => offsetGet 
+			[14] => offsetSet 
+			[15] => offsetUnset 
+			[16] => __construct 
+			[17] => __get 
+			[18] => toSimpleObject 
+			[19] => assertIsArray 
+			[20] => __isset 
+			[21] => __unset )
+
+Свойства класса
+	Array ( [nextPageToken] => 15677120272515048970 
+			[resultSizeEstimate] => 103 ) 

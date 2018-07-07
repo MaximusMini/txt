@@ -1,0 +1,21 @@
+программы сканеры
+Advanced IP Scanner
+XSpider 7.5
+NMAP
+
+
+
+target
+http://www.znyata.com/
+
+Инструменты Финиас Фишер  (взлом Hacking Team)
+правильно пользоваться поиском Google (как это делают пентестеры)
+busybox, 
+nmap, 
+Responder.py, 
+tcpdump, 
+dsniff, 
+screen,
+pwdump, 
+cachedump,
+lsadump

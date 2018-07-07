@@ -1,0 +1,11 @@
+Yii2 - Создание подключения к БД
+https://yiiframework.com.ua/ru/doc/guide/2/db-dao/
+
+	Для доступа к базе данных, вы сначала должны подключится к ней, создав экземпляр класса - yii\db\Connection:
+		
+		$db = new yii\db\Connection([
+			'dsn' => 'mysql:host=localhost;dbname=example',
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		]);

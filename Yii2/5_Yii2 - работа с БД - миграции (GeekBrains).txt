@@ -1,0 +1,327 @@
+Профессиональная работа с базами данных в Yii2 [GeekBrains] - ВЕБИНАР
+
+В программе вебинара:
+* Настройка подключения в различным базам данных (MySQL, SQLite);
+* Создание/применение/откат миграций;
+* Связывание нескольких таблиц с помощью внешних ключей;
+* Выборка данных из нескольких таблиц;
+* Выборка данных из базы с помощью классов ActiveRecord и ActiveQuery;
+* Конструктор запросов в Yii2;
+* CRUD операции в Yii2;
+* Особенности работы с базами данных в Yii2.
+
+
+В результате вебинара создаются две таблицы
+	1	post
+			id
+			id_category
+			title
+			content
+	2	category
+			id
+			title		
+
+
+1	Yii2 с коробки работает с 7 базами данных - http://www.yiiframework.com/doc-2.0/guide-db-dao.html
+		MySQL (по умолчанию)
+		MariaDB
+		SQLite
+		PostgreSQL
+		CUBRID: version 9.3 or higher.
+		Oracle
+		MSSQL: version 2008 or higher.
+
+2	Соединение с БД конфигурируется в файле config/web.php
+		- через компонент db, настройки которого конфигурируются не напрямую, а в файле config/db.php
+	Такое же подключение идет и в консоле
+		- config/console.php
+
+3	Работа с БД осуществляется через расширение PDO, которое необходимо устанавливать дополнительно, если оно не установлено.
+	существует общее расширеное PDO - для общего случая работы с БД
+	а также PDO расширение для конкретной БД.
+
+4	Создается нужная БД с таблицами
+
+5	В config/db.php указывается нужные
+		- dbname
+		- username
+		- password
+
+6	Настраиваем соединение для SQL lite
+		создаем файл config/db_sqlite.php с такой же структурой ка config/db.php
+		чтобы работало соединение sqlite - необходимо изменить параметр "dsn": имя драйвера mysql на  sqlite и убрать хост host..., т.к. sqllite это файл
+			- 'dsn'=>'sqlite:'
+		удаляем также параметры user и password
+
+7	Определить место где хранить файла БД sqlite	
+		cуществует два способа хранения
+			- в папке config создать папку data, в ней файл
+			- в корне приложения создать папку data, в ней файл
+		в файле db_sqlite.php прописываем место хранения (корень приложения)
+			- 'dsn' => 'sqlite:@app/data/sqlite.db', где
+					@app - корень приложения (псевдоним пути)
+					data - папка с БД
+					sqlite.db - файл БД
+
+8	В корне приложения создаем папку data
+
+9	Настраиваем конфигурацию приложения с учетом созданной БД sqlite
+		в файле config/db.php добавляем
+			- 'db2' => require(__DIR__ . '/db_sqlite.php'),
+
+10	Создаем миграции для двух будущих таблиц (post и category) БД (по условию вебинара)
+		из консоли в корне сайта для создания таблицы post выполняем команду
+			- php yii migrate/create post
+		для создания таблицы category
+			- php yii migrate/create category
+		в корне приложения создалась папка migrations, с ней два файла (две миграции)
+
+11	По умолчанию класс Migration, являющийся наследуемым (extends) при создании новых миграций, содержить четыре метода
+		up() 		- выполняется при накате (при применении) миграций
+		down()		- используется при откате миграций
+		safeUp()	- используется при накате если в миграции используются целостные данные, т.е. должна быть выполнена транзакция
+		safeDown() 	- используется при откате в случае выполнения транзакции
+		
+		!!! метод down() нужно очистить
+
+12	Создаем таблицу post с помощью метода createTable()
+		createTable() - принимает три параметра, два из них обязательные
+			- имя таблицы
+			- описание структуры таблицы (описывается в массиве)
+		
+		$this->createTable('post',[
+									'id'=>$this->primaryKey(),
+									'id_category'=>$this->integer()
+									'title'=>$this->string(100)->notNull(),
+									'content'=>$this->text();
+								  ])
+								  
+		Список возможных параметров для колонок создаваемых таблиц - http://www.yiiframework.com/doc-2.0/yii-db-querybuilder.html#getColumnType()-detail
+			pk: 			an auto-incremental primary key type, will be converted into "int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY"
+			bigpk: 			an auto-incremental primary key type, will be converted into "bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY"
+			unsignedpk: 	an unsigned auto-incremental primary key type, will be converted into "int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY"
+			char: 			char type, will be converted into "char(1)"
+			string: 		string type, will be converted into "varchar(255)"
+			text: 			a long string type, will be converted into "text"
+			smallint: 		a small integer type, will be converted into "smallint(6)"
+			integer: 		integer type, will be converted into "int(11)"
+			bigint: 		a big integer type, will be converted into "bigint(20)"
+			boolean: 		boolean type, will be converted into "tinyint(1)"
+			float`: 		float number type, will be converted into "float"
+			decimal: 		decimal number type, will be converted into "decimal"
+			datetime: 		datetime type, will be converted into "datetime"
+			timestamp: 		timestamp type, will be converted into "timestamp"
+			time: 			time type, will be converted into "time"
+			date: 			date type, will be converted into "date"
+			money: 			money type, will be converted into "decimal(19,4)"
+			binary: 		binary data type, will be converted into "blob"
+			
+13	В функции down() делаем откат миграции
+		$this->dropTable('post');
+
+14	Применение миграции для создание таблицы post - в консоли выполнить команду	
+		- php yii migrate/up 1
+			указываем параметр 1, т.к. вторая категория еще не сделана
+
+15	Откат созданной миграции	
+		- php yii migrate/down
+			указывать параметр 1 не нужно, т.к. по умолчанию количество откаченных миграций 1
+
+16	Создаем миграцию для таблицы category
+		- up()
+			$this->createTable('category',[
+										'id'=>$this->primaryKey(),
+										'title'=>$this->string(100)->notNull(),
+									])
+		
+		 - down()
+			$this->dropTable('category');
+
+17	Для автоматического создания генератором кода Yii2 - gii, связей между таблицами post и category необходимо сделать внешний ключ
+		в этих целях используется метод addForeignKey()
+			- 1-й параметр: имя ключа
+			- 2-й параметр: имя таблицы по столбцу которой происходит связь
+			- 3-й параметр: имя столбца по которому происходит связь
+  			- 4-й параметр: имя таблицы с которой происходит связь
+			- 5-й параметр: имя столбца с которым происходит связь
+			
+			public function up(){
+				.... // createTable()
+				
+				$this->addForeignKey('fk_category_post', 'post', 'id_category', 'category', 'id');
+			}
+		
+18	После накатывания миграции - php yii migrate в БД должны присутствовать три таблицы
+		category
+		migration - для отслеживания примененных миграций
+		post
+	проверяем наличие ключа в таблице post
+		post - Structure - indexes
+
+19	Проверяем включение генератора кода в Yii2
+		config/web.php
+			
+			if (YII_ENV_DEV) {
+				// configuration adjustments for 'dev' environment
+				$config['bootstrap'][] = 'debug';
+				$config['modules']['debug'] = [
+					'class' => 'yii\debug\Module',
+				];
+
+				$config['bootstrap'][] = 'gii'; // включенный генератор кода gii
+				$config['modules']['gii'] = [
+					'class' => 'yii\gii\Module',
+				];
+			}
+		
+		константа YII_ENV_DEV означает, что мы в режиме разработки
+
+20	Для того, чтобы заполнить таблицы данными, сгенерируем CRUD контроллеры
+		запускаем gii
+			- http://имя_ресурса/?r=gii
+
+21	Генерируем модели
+		http://имя_ресурса/?r=gii
+		Model Generator -> Start
+		
+		первая модель для таблицы post
+			Table name 							- post
+			Model Class 						- post
+			Namespace 							- app\models
+			Database Connection ID 				- db (имя компонента)
+			Generate Labels from DB Comments 	- checked (комментарии к таблицами БД)
+			-> Preview
+			-> Generate
+		
+		вторая модель для таблицы category
+			Table name 							- category
+			Model Class 						- category
+			Namespace 							- app\models
+			Database Connection ID 				- db (имя компонента)
+			Generate Labels from DB Comments 	- checked (комментарии к таблицами БД)
+			-> Preview
+			-> Generate
+		
+		в итоге создалось две новых модели
+			в моделе Post указана связь (один ко многим) к таблице Category - функция getIdCategory()
+			в моделе Category указана связь (многие к одному) к таблице Post - функция getPosts()
+
+22	Создаем CRUD
+		http://имя_ресурса/?r=gii
+		CRUD Generator -> Start
+			
+			CRUD для таблицы post
+				Model Class 		- app\models\Post
+				Search Model Class	- app\models\PostSearch (модель для быстрого поиска)
+				Controller Class	- app\controllers\PostController(контроллер)
+				View Path 			- не заполняем (все делаем в контроллере)
+				-> Preview
+				-> Generate
+			
+			то же самое для таблицы category
+			
+23	Создание метода для тестирования запросов
+		в контроллере SiteController создаем метод actionSql()
+			public function actionSql()
+				{
+					echo '3';
+				}
+			
+24	C помощью класса ActiveRecord найдем все посты и выведем их на экран
+		public function actionSql()
+				{
+					$post = Post::find()->all();
+					print_r($post);
+				}
+	
+	!!! 
+	для удобного просмотра (вывода) массива подключаем (через composer) библиотеку raveren/kint (https://packagist.org/packages/raveren/kint)
+		$ composer require raveren/kint
+	после подключения вместо метода print_r() используем метод d()
+		d($post);
+
+25	Определяем в каких категорях состоит каждый посты
+		выводим все посты
+			public function actionSql()
+				{
+					$posts = Post::find()->all();
+					foreach ($posts as $post)
+					{
+						each '<h2>Пост - '.$post->tittle.'</h2>';
+						each 'id: '.$post->id.'<br>';
+						each 'content: '.$post->content.'<br>';
+					}
+				}
+		выводим все категории
+			используем модель Post.php и функцию getIdCategory()
+			public function actionSql()
+				{
+					$posts = Post::find()->all();
+					foreach ($posts as $post)
+					{
+						each '<h2>Пост - '.$post->tittle.'</h2>';
+						each 'id: '.$post->id.'<br>';
+						each 'content: '.$post->content.'<br>';
+						each 'Пост состоит в категории: '.$post()->idCategory->title.'<br>';// get отбрасывается
+						each '<hr>';
+					}
+				}
+			!!! get отбросилось вследствие того, что используется "магическая" связь => get подставляется автоматически
+			НО - можно также использовать полностью название функции, но в другой, более сложной обертке, т.к. возвращается массив
+	
+26	Выборка с условиями - для этого используется метод where()
+		методу where() передается массив параметров по которым происходит фильтрация
+		
+		фильтрция постов по id категориям
+			выводим только посты 2-ой категории
+				public function actionSql()
+					{
+						$posts = Post::find()->where(['id_category'=>2])->all();
+						....
+					}
+			ограничиваем количество выводимых постов - один
+				public function actionSql()
+					{
+						$posts = Post::find()->where(['id_category'=>2])->limit(1)->all();
+						....
+					}
+
+27	При выполнении метода find() мы получаем объект, чтобы его преобразовать в массив нужно использовать метод asArray()
+		public function actionSql()
+			{
+				$posts = Post::find()->where(['id_category'=>2])->asArray()->limit(1)->all();
+				d($post);
+			}
+
+28 	Получение количества записей с определенным параметром - вместо all() использовать count()
+		public function actionSql()
+			{
+				$count = Post::find()->where(['id_category'=>2])->count();
+				echo $count.'<hr>';
+			}
+
+29	Обновление записей - метод updateAll()
+		updateAll() принимает ряд атрибутов
+		
+		поменяем в таблице post везде контент (столбец content)
+			Post::updateAll(['content'=>'новый контент'])
+
+30	Удаление записей - метод deleteAll()
+
+31	Работа с транзакциями (01:21)
+		изменение первого поста
+			$post=Post::findOne(1);
+			
+		для работы с транзакциями используем модель и метод getDb()
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

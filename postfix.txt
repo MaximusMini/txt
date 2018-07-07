@@ -1,0 +1,6 @@
+Всё. Можно проверить следующей командой:
+echo "Test mail from postfix" | mail -s "Test Postfix" user@gmail.com
+
+
+Все настройки этого почтового сервера хранятся в /etc/postfix
+основной файл конфигурации, называющийся main.cf

@@ -1,0 +1,46 @@
+Хранилище
+
+1	Google Drive
+		Бесплатно - 15Gb
+		
+2	Microsoft OneDrive
+		Бесплатно - 5 Гбайт
+		
+3	Dropbox
+		Бесплатно - 2 Гбайт
+	
+4	Mega (https://mega.nz)
+		Бесплатно - 50 Гбайт
+		
+5	Яндекс.Диск
+		Бесплатно - 10 Гбайт
+		
+6	Облако@mail.ru
+		Бесплатно - 25 Гбайт
+		
+7	pCloud
+		Бесплатно - 20 Гбайт
+
+8	4shared (http://www.4shared.com)
+		Бесплатно - 15 Гбайт
+	
+9	iDrive (http://www.idrive.com)
+		Бесплатно - 5 Гбайт
+
+10	OpenDrive (http://www.opendrive.com)
+		Бесплатно - 5 Гбайт
+
+11	Syncplicity ( http://www.syncplicity.com)
+		Бесплатно - 10 Гбайт
+
+12	MediaFire (http://www.mediafire.com/)
+		Бесплатно - 10 Гбайт
+	
+	
+	
+	
+	
+	
+	
+	
+		

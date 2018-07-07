@@ -1,0 +1,62 @@
+
+1.	В domains создать папку
+
+2.	Открыть консоль OpenServer
+	в консоли перейти в каталог созданной папки
+	(например: 	переход в папку c:\OpenServer\domains\yii2-site
+		Asus@WIN-QHLDN56QCKO c:\OpenServer\domains
+		$ cd  yii2-site
+	)
+	
+	$ cd domains\yii2-bootstrap
+
+3.	Проверяем наличие composer
+		composer
+		
+		команда установки composer
+		php -r "readfile('https://getcomposer.org/installer');" | php
+		
+		команда обновления composer
+		composer self-update
+
+4.	Устанавливаем специальный плагин для composer, который позволит также управлять пакетами bower и npm. 
+	Это нужно для управления зависимостями файлов и библиотек CSS, JavaScript. 
+	Эту команду достаточно выполнить один раз. При последующих установках повторять не нужно.
+		composer global require "fxp/composer-asset-plugin:1.2.1"
+		(!!! может возникать ошибка из-за версии плагина | можно проверить на https://packagist.org/packages/fxp/composer-asset-plugin)
+
+5.	Установка Yii 2 через composer
+		если находитесь в папке куда хотет установить то команда
+			composer create-project --prefer-dist yiisoft/yii2-app-basic
+		если в корне приложения - 	Asus@WIN-QHLDN56QCKO c:\OpenServer
+			$ composer create-project --prefer-dist yiisoft/yii2-app-basic yii2-site2
+				установит yii2 в корень c:\OpenServer в папку yii2-site2
+			$ composer create-project --prefer-dist yiisoft/yii2-app-basic domains\yii2-site3
+				установит yii2 в папку yii2-site3 по адресу c:\OpenServer\domains
+
+6.	Во время установки запросит токен с githab
+		Token (hidden): 
+		4fc87d0ea184fc492933281e12909fe00618c36d
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

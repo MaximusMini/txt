@@ -1,0 +1,23 @@
+﻿VK.API -Друзья
+
+	friends.add - Одобряет или создает заявку на добавление в друзья.
+		(https://vk.com/dev/friends.add)
+		https://api.vk.com/method/friends.add?user_id=98770195&text=привет&follow=0&access_token=3bfd40e1393772fc8bd5d06cf408e072db45dd0efdc1d06d9c8c871c414a82b33d9c08a09b7257139e805&v=5.69
+		https://api.vk.com/method/friends.add?user_id=134461515&text=привет&follow=0&access_token=61de254db50b81a06ea76e981ebc94b623e80ae7baaacdc907394447eaa378489784631f1e3a06b2ae42f&v=5.69
+		
+		
+	friends.get - Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя
+		(https://vk.com/dev/friends.get)
+		https://api.vk.com/method/friends.get?user_id=405281562&v=5.69
+		
+	friends.getRequests - Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя.
+		(https://vk.com/dev/friends.getRequests)
+		https://api.vk.com/method/friends.getRequests?offset=0&count=10&extended=0&need_mutual=0&out=1&sort=0&need_viewed=0&access_token=becd4bcefcec33bcccf43e85758c821af2bded8ba847177378508a03a7751d3e633b593ebc138e7129f76&v=5.69
+		
+	friends.delete - Удаляет пользователя из списка друзей или отклоняет заявку в друзья.
+		(https://vk.com/dev/friends.delete)
+		https://api.vk.com/method/friends.delete?user_id=372448294&v=5.69&access_token=61de254db50b81a06ea76e981ebc94b623e80ae7baaacdc907394447eaa378489784631f1e3a06b2ae42f
+		
+		
+		
+	

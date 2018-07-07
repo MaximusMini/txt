@@ -1,0 +1,5 @@
+
+	для удобного просмотра (вывода) массива подключаем (через composer) библиотеку raveren/kint (https://packagist.org/packages/raveren/kint)
+		$ composer require raveren/kint
+	после подключения вместо метода print_r() используем метод d()
+		d($post);

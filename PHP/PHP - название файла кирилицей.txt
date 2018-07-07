@@ -1,0 +1,8 @@
+PHP - название файла кирилицей
+
+	функция iconv()
+	в Windows кодировка CP1251
+	
+	$name_file = $name_team.'_'.(time());
+    
+	imagepng($image,'../../template_img/leaders/new/'.iconv("UTF-8","CP1251",$name_file).'.png',9);

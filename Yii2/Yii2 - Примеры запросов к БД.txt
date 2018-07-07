@@ -1,0 +1,58 @@
+Yii2 - Примеры запросов к БД
+
+1	Поиск записи из модели (таблицы) Customer у которой ID равен 1
+		$customer = Customer::find()
+								->where(['id' => 1])->one();
+		
+2	Найти всех активных клиентов (статус = 1) и отсортировать их во возросту
+		$customers = Customer::find()
+								->where(['status' => 1])
+								->orderBy('age')
+								->all();
+
+3	Извлечь из БД запись с пользователем 'CeBe'
+		$user = User::find()
+						->where(['name' => 'CeBe'])->one();
+						
+4	Метод использующий синтаксис SQL - findBySql()
+		$customers = Customer::findBySql('SELECT * FROM customer')->all();
+			Customer 	- модель соответствующая таблице
+			customer	- таблица БД из которой производится выборка
+		
+		Примеры:
+		$all_news = News::findBySql('SELECT * FROM news ORDER BY date_news LIMIT 4')->all();
+			получаем первые четыре записи отсортированные по дате в порядке возростания
+		$all_news = News::findBySql('SELECT * FROM news ORDER BY date_news DESC LIMIT 4')->all();
+			получаем первые четыре записи отсортированные по дате в порядке убывания
+		
+5	Метод find() класса ActiveRecord в результате своего выполнения создает экземпляр объекта класса ActiveQueryInterface (http://www.yiiframework.com/doc-2.0/yii-db-queryinterface.html#andFilterWhere()-detail), который имеет ряд методов для выполнения запросов
+		addOrderBy()
+		all()
+		andFilterWhere()
+		andWhere()
+		count()
+		emulateExecution()
+		exists()
+		filterWhere()
+		indexBy()
+		limit()
+		offset()
+		one()
+		orFilterWhere()
+		orWhere()
+		orderBy()
+		where()
+		
+		
+		
+		$post = Post::find()->all();							// выбрать все
+		$post = Post::find()->select('id','title')->all();		// выбрать все записи из полей id, title
+		$post = Post::find()->limit(2)->all();					// выбрать первые две записи
+		$post = Post::find()->orederBy('id ASC')->all();		// прямая сортировка по колонке id
+		$post = Post::find()->orederBy('id DESC')->all();		// обратная сортировка по колонке id
+		$user = User::find()->where(['name' => 'CeBe'])->one();	// 
+		
+		
+		
+		
+		

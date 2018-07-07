@@ -1,0 +1,66 @@
+
+1.	В файле index.php есть константы
+
+		defined('YII_DEBUG') or define('YII_DEBUG', true);
+		defined('YII_ENV') or define('YII_ENV', 'dev');
+	
+	YII_DEBUG может принимать значения true/fasle отвечает за включение/выключение режима отладки. Включенный режим отладки позволяет собирать больше информации в лог-файлы, а также покажет детальный стек ошибки в случае падения приложения.
+
+	YII_ENV — указывает в какой среде (окружении) запущено приложение «prod», «dev» или «test». Фактически, в зависимости от значения устанавливается в true значение одной из трех соответствующих констант YII_ENV_PROD, YII_ENV_DEV или YII_ENV_TEST. В зависимости от среды могут подключаться или отключаться различные модули.
+
+	Обнаружил странную логику, по умолчанию, панель дебага Yii Debugger включена во все среды, кроме test. См. файл yii2site\www\yii2\frontend\config\main-local.php
+	
+	…
+	if (!YII_ENV_TEST) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = 'yii\debug\Module';
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
+	}
+	…
+		
+		
+	я выключу debug\Module и gii\Module также и в среде «prod» (YII_ENV_PROD).
+
+	…
+	if (!YII_ENV_TEST && !YII_ENV_PROD) {
+		// configuration adjustments for 'dev' environment
+		$config['bootstrap'][] = 'debug';
+		$config['modules']['debug'] = 'yii\debug\Module';
+
+		$config['bootstrap'][] = 'gii';
+		$config['modules']['gii'] = 'yii\gii\Module';
+	}
+	…
+
+		Соответственно, остаётся указать в файлу index.php соответствующие данные
+
+		defined('YII_DEBUG') or define('YII_DEBUG', true);
+		defined('YII_ENV') or define('YII_ENV', 'prod');
+
+	Всё. Теперь наш Yii2 advanced красив, аккуратен, работает с короткими ссылками и на сайте сокрыта вся отладочная информация. Спасибо за прочтение, надеюсь, мой конспект окажется для вас полезен!
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

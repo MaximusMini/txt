@@ -1,0 +1,10 @@
+ZF2-файл application.config.php
+
+1. добавить в массив имя создаваемого модуля
+	
+	// config/application.config.php:
+			return array(
+				'modules' => array(
+					'Application',
+					'Name new module',                  // <-- Add this line
+				),

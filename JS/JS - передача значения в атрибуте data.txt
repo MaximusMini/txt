@@ -1,0 +1,13 @@
+JS - передача значения в атрибуте data
+
+	в JavaScript используется метод dataset()
+	в jQuery используется метод data()
+
+	
+	есть span элемент  со значением которое нужно получить: data-name='Ivanov'
+		<span id='spanName' data-name='Ivanov'> Иванов </span>
+		
+	на <span> вешаем обработчик события
+		$('span#spanName').on('click', function(){
+			var name = $(this).data('name');// получаем значение атрибута data-name
+		})

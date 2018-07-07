@@ -1,0 +1,44 @@
+Установка Anaconda
+http://profitraders.com/Python/PythonIntro.html
+
+1	Скачать дистрибутив Anaconda
+		https://www.continuum.io/downloads
+		выбрать нужную версию
+		
+2	Установить Anaconda3-4.4.0-Windows-x86_64.exe
+		Install for: All users
+		C:\Anaconda3
+		Advanced Options (поставить обе галочки)
+		Install 
+
+3	Действия после установки Anaconda
+		обновить исталятор Anaconda
+			Пуск -> Программы -> Anaconda -> Anaconda Command Prompt (командная строка)
+				conda update conda
+					proceed - yes
+		обновить пакеты Anaconda
+				conda update anaconda
+
+4	Проверка работоспособности Anaconda
+		проверка в режиме IPython Notebook
+			Пуск -> Программы -> Anaconda -> Anaconda Command Prompt (командная строка)
+				ipython notebook
+					должен запуститься локальный веб-сервер
+					браузер откроет страницу localhost:8888/tree
+
+5	Создать новую записную книжку
+		New -> Python3
+		в первой же ячейке напишем строки:
+			%matplotlib inline
+			from numpy import linspace, cos
+			import matplotlib.pyplot as plt
+			x = linspace(0, 10, 50)
+			y = cos(x)
+			plt.plot(x, y)
+			
+		чтобы выполнить введённый код, надо нажать Shift+Enter
+		в результате будет построен график функции косинус	
+			
+			
+			
+			

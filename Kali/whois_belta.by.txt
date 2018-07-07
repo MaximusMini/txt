@@ -1,0 +1,18 @@
+Domain Name: belta.by
+Domain Name Administrator: HIDDEN! Details are available at http://www.cctld.by/whois
+Registrar: Open Contact, Ltd
+Name Server: gate.belta.by
+IP Address: 86.57.255.226
+Name Server: llm2.belta.by
+IP Address: 86.57.255.235
+Name Server: ns.belta.by
+IP Address: 93.84.114.38
+Name Server: bf.belta.by
+IP Address: 178.124.194.92
+Updated Date: 2016-12-21
+Creation Date: 2002-12-26
+Expiration Date: 2018-01-05
+
+-------------------------------------------
+Service provided by Reliable Software, Ltd.
+

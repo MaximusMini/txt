@@ -1,0 +1,200 @@
+Google Charts - установка и настройка
+	https://www.youtube.com/watch?v=oj4lqfl_ibg&index=2&list=PLD-piGJ3Dtl0GK2VQi5Fpv-x7il-Prk9e
+
+изучается столбцовая и круговая диаграммы
+пример использования - http://googlecharts.local/
+
+1	Докуметация Google Charts
+		https://developers.google.com/chart/
+		
+2	Галерея доступных диаграмм
+		https://developers.google.com/chart/interactive/docs/gallery
+
+3	На главной странице документации нажимаем GetStarted и переходим в режим быстрого старта Quick Start
+		https://developers.google.com/chart/interactive/docs/quick_start
+		- здесь отображается пример использования круговой диаграммы
+		- отображается код, который можно скопировать и сразу использовать
+		
+4	Использование примера из документации
+	4.1 Подключение скрипта
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	4.2	Между тэгами head указан скрипт первичной настройки Google Charts
+			скопируем его и поместим в файл script.js
+			затем его подключаем 
+			<script src='script.js'></script>
+
+5	Содержание файла script.js
+		// загрузка API визуализации
+			google.charts.load('current', {'packages':['corechart']});
+		// вызов callback функции drawChart() после загрузки API визуализации
+			google.charts.setOnLoadCallback(drawChart);
+		// функция drawChart()
+			// создается экземпляр класса и добавляет данные для диаграммы
+				var data = new google.visualization.DataTable();
+			// добавляются столбцы (колонки)
+				data.addColumn('string', 'Topping');
+				data.addColumn('number', 'Slices');
+				// 'Topping' и 'Slices' - название столбцов
+			// добавляются строки (ряды)
+				data.addRows([
+				  ['Mushrooms', 3],
+				  ['Onions', 1],
+				  ['Olives', 1],
+				  ['Zucchini', 1],
+				  ['Pepperoni', 2]
+				])
+			// опции настройки диаграммы
+				 var options = {
+					'title':'How Much Pizza I Ate Last Night', 	// название диаграммы 
+                    'width':400, 								// ширина диаграммы
+                    'height':300};								// высота диаграммы
+			// создается экземпляр объекта круговая диаграмма - PieChart
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+				// в случае столбцовой диаграммы вместо PieChart нужно указать ColumnChart
+				// диаграмма должна создаваться в элементе, который присутсвует в верстке, в данном случае getElementById('chart_div')
+			// отрисовка диаграммы с учетом данных и настроек
+				chart.draw(data, options);
+			
+			
+6	Настройка диаграмм
+		все настройки используемой диаграммы можно посмотреть в документации к ней
+			для PieChart
+				переходим в Chart Gallery -> выбираем Pie Chart -> раздел Configuration Options (все настройки диаграммы)
+		PieChart (опции)
+			'pieHole' - добавляет белый круг внутри диаграммы
+				'pieHole':0.1,
+			'slices' - выдвигает кусочки диаграммы (выделяет из общего круга)
+				'slices':{
+					4:{offset: 0.2},
+					2:{offset: 0.2},
+				}
+			'is3D' - отображение диаграммы в 3D
+				'is3D': true;
+			'legend' - настройка отображения легенды
+				'legend':'left', // легенда слева от диаграммы
+			'pieStartAngle' - угол старта первого куска диаграммы (вращение диаграммы)
+			'backgroundColor.strokeWidth' - 
+			'colors' - задает цвет кусков диаграммы
+				colors: ['red','#004411', 'green', 'blue', '#535353']
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+		

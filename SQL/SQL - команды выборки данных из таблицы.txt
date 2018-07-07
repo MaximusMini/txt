@@ -1,0 +1,39 @@
+SQL - команды выборки данных из таблицы
+
+https://myrusakov.ru/sql-osnovy.html
+
+Команда SELECT производит выборку данных из таблиц по запросу.
+
+1	Просмотр всей таблицы (выборка всей таблицы persons)
+		SELECT * FROM persons
+
+2	Выборка полей fname и sname из таблицы persons
+		SELECT fname, sname FROM persons;
+	
+	Конструкция SELECT может включать арифметические выражения, а также простые имена полей. Кроме того, можно добавить константы в результат выборки
+
+4	Выборка полей: id товара, текстовое поле «цена товара» и стоимость товара
+		
+		SELECT idgoods, «Цена», price FROM goods;
+
+5	Сортировка - SQL-запрос на сортировку результата выборки
+		
+		SELECT * FROM users ORDER BY date_registration		- записи отсортированы по возрастанию поля "date_registration"
+		SELECT * FROM users ORDER BY date_registration DESC	- данные расположены по убыванию относительно поля "date_registration".
+
+6	Полноценный SQL-запрос на выборку записей с сортировкой
+		
+		SELECT login FROM users WHERE id > 20 AND id < 100 ORDER BY login LIMIT 10,30
+			
+			После выполнения этого SQL-запроса у нас получится result_set, в котором содержатся записи из таблицы users (только поле "login"), причём id этих записей больше 20 и меньше 100, сортировка записей по возрастанию поля "login", а берём мы записи, начиная с 10-ой включительно в количестве 30-ти штук.
+	
+7	Запрос SQL на выборку определённого числа записей (https://myrusakov.ru/sql-limit.html)
+		
+		SELECT * FROM users WHERE id > 5 LIMIT 10
+			
+			данным запросом мы получим 10 первых записей
+
+
+
+
+	

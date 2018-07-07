@@ -1,0 +1,106 @@
+сканер Nikto
+
+Nikto for Windows  (download)				- https://projects.giacomodrago.com/nikto-win/
+Nikto v2.1.5 The Manual						- https://cirt.net/nikto2-docs/
+Nikto - сканер уязвимостей Web-сервера		- http://suvan.ru/page/nikto.html
+
+
+
+Описание:
+Nikto – perl сканер уязвимостей Web сервера, с поддержкой SSL. Программа включает поддержку прокси, аутентификацию хоста и SSL. Nikto проверяет (и по возможности эксплуатирует) удаленный Web сервер на наличие известных уязвимостей и неправильной конфигурации. Программа также ищет устарелое программное обеспечение и модули, предупреждает о проблемах в любой версии, поддерживает просмотры через прокси (с идентификацией). Программа легко обновляется через интернет.
+
+
+Использование сканера уязвимостей Nikto v2.1.4 для проверки сайта (http://microsin.net/adminstuff/security/nikto-v214.html)
+	Базовое сканирование 				./nikto.pl -h 192.168.0.1
+	Определенный порт 					./nikto.pl -h 192.168.0.1 -p 443
+	проверяемый протокол				./nikto.pl -h https://192.168.0.1:443/
+	сканирование нескольких портов		./nikto.pl -h 192.168.0.1 -p 80,88,443
+	работа через proxy					./nikto.pl -h 192.168.0.1 -p 80 -u
+	Автоматизация сканирования (несколько серверов)
+		создать текстовый файл (web.txt) такого вида:
+			192.168.0.2:80
+			192.168.0.2:443
+			192.168.2.30:8000
+		передать его программе Nikto
+			./nikto.pl -h web.txt
+
+Порядок использования
+1. Установка ActivePerl
+		как правило Perl устанавливается в директорию c:\Perl  (c:\Perl64)
+		исполняесый файл - c:\Perl64\bin\perl.exe
+2. В эту же папку целесообразно скопировать распокованный	пакет nikto
+		https://projects.giacomodrago.com/nikto-win/nikto-2.1.5-win.7z
+3. Нужный файл для запуска сканера nikto.pl
+		полный путь c:\Perl64\nikto-2.1.5\nikto.pl
+4. Вызвать командную строку Windows
+5. Принцип скрипта Perl такой
+		запускается c:\Perl64\bin\perl.exe
+		ему передается c:\Perl64\nikto-2.1.5\nikto.pl
+		Путь нужно указывать через текущую директорию с помощью точки. 
+		Так правильно: perl ./nikto.pl -h mail.ru
+		А так неправильно: perl nikto.pl -h mail.ru
+6. Для того чтобы правильно передать файл .pl нужно находится в этой директории
+		cd c:\Perl64\nikto-2.1.5
+		запуск c:\Perl64\nikto-2.1.5 c:\Perl64\bin\perl.exe ./nikto.pl -h kgb.by
+		с записью в файл c:\Perl64\nikto-2.1.5 c:\Perl64\bin\perl.exe ./nikto.pl -h kgb.by>d:\scan_nikto.txt
+
+!!!
+ Наиболее интересная функция программы Nikto - это IDS-обход системы обнаружения вторжений, который позволяет «обойти» боль­шинство известных IDS, то есть просканировать сервер так, что IDS этого не заметит.
+	Параметры IDS устанавливаются в командной строке с помощью опции -е
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+
+РЕЗУЛЬТАТЫ СКАНИРОВАНИЯ САЙТА kgb.by	
+c:\Perl64\nikto-2.1.5>c:\Perl64\bin\perl.exe ./nikto.pl -h kgb.by
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          178.124.138.165
++ Target Hostname:    kgb.by
++ Target Port:        80
++ Start Time:         2017-06-10 22:19:17 (GMT3)
+---------------------------------------------------------------------------
++ Server: nginx/1.0.6
++ Cookie PHPSESSID created without the httponly flag
++ Retrieved x-powered-by header: PHP/5.3.3-7+squeeze19
++ The anti-clickjacking X-Frame-Options header is not present.
++ Root page / redirects to: http://kgb.by/ru
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Server leaks inodes via ETags, header found with file /robots.txt, inode: 5521
+4359, size: 185, mtime: 0x502526f928380
++ Uncommon header 'x-content-type-options' found, with contents: nosniff
++ Uncommon header 'x-frame-options' found, with contents: SAMEORIGIN
++ File/dir '/ru/search-ru/' in robots.txt returned a non-forbidden or redirect H
+TTP code (200)
++ File/dir '/by/search-by/' in robots.txt returned a non-forbidden or redirect H
+TTP code (200)
++ "robots.txt" contains 4 entries which should be manually viewed.
++ OSVDB-3092: /sitemap.xml: This gives a nice listing of the site content.
++ OSVDB-12184: /index.php?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals
+potentially sensitive information via certain HTTP requests that contain specifi
+c QUERY strings.
++ OSVDB-3092: /manual/: Web server manual found.
++ OSVDB-3268: /icons/: Directory indexing found.
++ OSVDB-3268: /manual/images/: Directory indexing found.
++ OSVDB-3233: /icons/README: Apache default file found.
++ OSVDB-3092: /Admin/: This might be interesting...
++ OSVDB-3092: /by/: This might be interesting... potential country code (Belarus
+)
++ OSVDB-3092: /ru/: This might be interesting... potential country code (Russian
+ Federation)
++ 6544 items checked: 73 error(s) and 18 item(s) reported on remote host
++ End Time:           2017-06-10 22:49:30 (GMT3) (1813 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+

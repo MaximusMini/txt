@@ -1,0 +1,22 @@
+модуль 15 Postfix
+
+1	Удаляем sendmaill
+	
+	yum -y remove sendmaill (для Fedora)
+	
+	apt-get remove sendmail
+		Reading package lists... Done
+		Building dependency tree
+		Reading state information... Done
+		Package 'sendmail' is not installed, so not removed
+		0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+2	Устанавливаем Postfix
+
+3	Настраиваем Postfix
+	ls -l /etc/postfix/
+	
+	настраиваем два файла
+	main.cf
+	master.cf (подключаются различные программные средства для работы почты)
+	
