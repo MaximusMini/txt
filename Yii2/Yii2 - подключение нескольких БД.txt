@@ -1,0 +1,78 @@
+Yii2 - подключение нескольких БД
+http://www.webapplex.ru/soedinenie-s-bazoj-dannoj-v-yii-2.x
+
+	1.	Для доступа к базе, сначала необходимо создать экземпляр класса 
+			$db = new yii\db\Connection([
+					   'dsn' => 'mysql:host=localhost;dbname=basename',
+					   'username' => 'root', 
+					   'password' => '',
+					   'charset' => 'utf8',
+			]); 
+	
+	2.	Часто требуется подключать базу в различных местах, поэтому распространенной практикой является настройка компонента приложения. 
+		Для этого в файле web.php прописываем следующий код:
+			return [
+				//...
+			   'components' => [
+				   //...
+				  'db'  => require(__DIR__ . '/db.php'),
+			   ],
+				//...
+			];
+			
+	3.	Выносим подключение в файл db.php. В файле подключения вставляем следующий код:
+			return [
+			   'class' => 'yii\db\Connection',
+			   'dsn' => 'mysql:host=localhost;dbname=basename',
+			   'username' => 'root',
+			   'password' => '',
+			   'charset' => 'utf8',
+			];
+	
+	4.	Теперь вы можете получить доступ к подключению к текущей БД с помощью выражения 
+			Yii::$app->db
+		
+		для доступа к последующей базе данных используйте выражение 
+			\Yii::$app->secondDb
+			
+	5.	Подключим 2 базы данных, для этого в файле web.php прописываем следующий код:
+			return [
+				//...
+			   'components' => [
+				   //...
+				  'firstdb'  => require(__DIR__ . '/firstdb.php'),
+				  'seconddb'  => require(__DIR__ . '/seconddb.php'),
+			   ],
+				//...
+			];
+			
+	6.	Файлы firstdb.php и seconddb.php непосредственно будут отвечать за соединение с базами. 
+		Далее назначим каждой модели свою базу, для этого в модили пишем следующий код:
+			
+			namespace app\models;
+				use Yii;
+
+				class Firstmodel extends \yii\db\ActiveRecord
+				{
+
+					public static function getDb()
+					{
+					   return \Yii::$app->firstdb;
+					}
+					//................
+			}
+			
+			----------------------------------------------------
+			
+			namespace app\models;
+			use Yii;
+
+			class Secondmodel extends \yii\db\ActiveRecord
+			{
+
+				public static function getDb()
+				{
+				   return \Yii::$app->seconddb;
+				}
+				//................
+			}    			
