@@ -1,0 +1,26 @@
+PHP - сохранение изображения в <canvas>
+https://gist.github.com/peterschmidler/2410299
+	
+	The following code saves a canvas as png with ajax to php.
+
+	Javascript:
+	-----------
+
+		var canvasData = canvasElement.toDataURL("image/png");
+		$.ajax({
+			url:'save.php', 
+			type:'POST', 
+			data:{
+				data:canvasData
+			}
+		});
+
+	PHP:
+	----
+
+		$data = $_POST['data'];
+		$data = substr($data,strpos($data,",")+1);
+		$data = base64_decode($data);
+		$file = 'output.png';
+		file_put_contents($file, $data);
+		echo "Success!";
