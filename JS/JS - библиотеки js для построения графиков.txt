@@ -1,0 +1,55 @@
+JS - библиотеки js для построения графиков
+	
+	10 бесплатных jQuery плагинов для создания графиков
+		http://2web-master.ru/10-besplatnyx-jquery-plaginov-dlya-sozdaniya-grafikov.html
+	22 отличных библиотеки визуализации: Диаграммы и графики
+		http://www.coolwebmasters.com/charts/287-22-awesome-visualization-libraries-charts-and.html
+	5 лучших он-лайн инструментов по созданию диаграмм
+		http://www.coolwebmasters.com/web-applications/480-5-best-online-diagramming-tools.html
+	20 очень полезных и бесплатных скриптов для построения диаграмм и графиков
+		http://www.coolwebmasters.com/charts/54-20-really-useful-and-free-scripts-to-plot-charts.html
+	
+	
+	Arbor.js
+		библиотека визуализации графиков и диаграмм с помощью jQuery
+		http://www.coolwebmasters.com/charts/1336-arbor-js-graph-visualization-library-with-web-workers-jquery.html
+	
+	Flot
+		jQuery-плагин для быстрого и простого создания привлекательных интерактивных графиков.
+		http://www.coolwebmasters.com/charts/3695-a-flexible-plotting-library-for-jquery-flot.html
+	
+	Highcharts
+		библиотека графиков и диаграмм на javascript
+		http://www.coolwebmasters.com/script-library/468-highcharts-pure-javascript-charts-library.html
+		
+	jqBarGraph
+		jQuery graph plugin
+		http://www.coolwebmasters.com/charts/612-creating-bar-charts-with-mootools-and-jquery.html
+		http://workshop.rs/2009/12/jqbargraph-jquery-graph-plugin/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	PHP
+		Gantti: диаграммы Ганта на PHP
+		http://www.coolwebmasters.com/charts/3021-gantt-charts-with-php-gantti.html

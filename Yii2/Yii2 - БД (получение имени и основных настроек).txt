@@ -1,0 +1,132 @@
+Yii2 - БД (получение имени и основных настроек)
+	
+		1. Для доступа к базе данных, сначала нужно подключится к ней, создав экземпляр класса - yii\db\Connection:
+			$db = new yii\db\Connection([
+				'dsn' => 'mysql:host=localhost;dbname=example',
+				'username' => 'root',
+				'password' => '',
+				'charset' => 'utf8',
+			]);
+			
+		2. Запрос к БД - 'show databases'
+			$posts = $db->createCommand('show databases');
+				в переменной $posts будет объект данных
+				
+			
+		3. Используем метод get_object_vars() чтобы получить массив свойств объекта
+			$settings_DB = get_object_vars($posts);
+		
+		4. Выводим массив в удобном виде
+			<pre>
+				<?= print_r(get_object_vars($posts))?> 
+			</pre>
+			
+			
+		$settings_DB = get_object_vars($posts);
+		$name_DB = get_object_vars($settings_DB['db'])['dsn'];
+		echo "<br>имя БД - ".$name_DB;
+			
+		Array
+		(		
+		[db] => yii\db\Connection Object
+        (
+            [dsn] => mysql:host=localhost;dbname=db_preview
+            [username] => root
+            [password] => 
+            [attributes] => 
+            [pdo] => 
+            [enableSchemaCache] => 
+            [schemaCacheDuration] => 3600
+            [schemaCacheExclude] => Array
+                (
+                )
+
+            [schemaCache] => cache
+            [enableQueryCache] => 1
+            [queryCacheDuration] => 3600
+            [queryCache] => cache
+            [charset] => utf8
+            [emulatePrepare] => 
+            [tablePrefix] => 
+            [schemaMap] => Array
+                (
+                    [pgsql] => yii\db\pgsql\Schema
+                    [mysqli] => yii\db\mysql\Schema
+                    [mysql] => yii\db\mysql\Schema
+                    [sqlite] => yii\db\sqlite\Schema
+                    [sqlite2] => yii\db\sqlite\Schema
+                    [sqlsrv] => yii\db\mssql\Schema
+                    [oci] => yii\db\oci\Schema
+                    [mssql] => yii\db\mssql\Schema
+                    [dblib] => yii\db\mssql\Schema
+                    [cubrid] => yii\db\cubrid\Schema
+                )
+
+            [pdoClass] => 
+            [commandClass] => yii\db\Command
+            [commandMap] => Array
+                (
+                    [pgsql] => yii\db\Command
+                    [mysqli] => yii\db\Command
+                    [mysql] => yii\db\Command
+                    [sqlite] => yii\db\sqlite\Command
+                    [sqlite2] => yii\db\sqlite\Command
+                    [sqlsrv] => yii\db\Command
+                    [oci] => yii\db\Command
+                    [mssql] => yii\db\Command
+                    [dblib] => yii\db\Command
+                    [cubrid] => yii\db\Command
+                )
+
+            [enableSavepoint] => 1
+            [serverStatusCache] => cache
+            [serverRetryInterval] => 600
+            [enableSlaves] => 1
+            [slaves] => Array
+                (
+                )
+
+            [slaveConfig] => Array
+                (
+                )
+
+            [masters] => Array
+                (
+                )
+
+            [masterConfig] => Array
+                (
+                )
+
+            [shuffleMasters] => 1
+            [enableLogging] => 1
+            [enableProfiling] => 1
+            [_transaction:yii\db\Connection:private] => 
+            [_schema:yii\db\Connection:private] => 
+            [_driverName:yii\db\Connection:private] => mysql
+            [_master:yii\db\Connection:private] => 
+            [_slave:yii\db\Connection:private] => 
+            [_queryCacheInfo:yii\db\Connection:private] => Array
+                (
+                )
+
+            [_events:yii\base\Component:private] => Array
+                (
+                )
+
+            [_eventWildcards:yii\base\Component:private] => Array
+                (
+                )
+
+            [_behaviors:yii\base\Component:private] => 
+        )
+
+			[pdoStatement] => 
+			[fetchMode] => 2
+			[params] => Array
+				(
+				)
+
+			[queryCacheDuration] => 
+			[queryCacheDependency] => 
+		)
