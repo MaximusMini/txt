@@ -1,0 +1,7 @@
+Уязвимости на Wordpress
+
+	https://xakep.ru/tag/wordpress/
+	
+	1. CVE-2018-6389 - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6389
+			Описание: В WordPress через 4.9.2 неаутентифицированные злоумышленники могут вызвать отказ в обслуживании (потребление ресурсов), используя большой список зарегистрированных .js-файлов (из wp-includes / script-loader.php), чтобы построить серию запросов на загрузку каждого файл много раз.
+		https://xakep.ru/2018/02/06/wordpress-dos/

@@ -1,0 +1,25 @@
+Сервисы проверки на уязвимости WordPress
+
+	1. https://hackertarget.com/wordpress-security-scan/
+	2. https://scanurl.net/
+	3. https://sitecheck.sucuri.net/
+	4. https://www.siteguarding.com/en/sitecheck
+	5. https://app.upguard.com/webscan
+	6. https://wpneuron.com/wordpress-vulnerability-scanner/
+	7. https://wprecon.com/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	Статьи
+		1. Поиск уязвимостей в сайтах на WordPress
+			https://helpugroup.ru/poisk-uyazvimostej-v-sajtah-na-wordpress/
+		2. 7 онлайн-сервисов для тестирования уязвимостей сайта на WordPress
+			http://timeweb.com/ru/community/articles/7-onlayn-servisov-dlya-testirovaniya-uyazvimostey-sayta-na-wordpress-1
+		3. Папка wp-content
+			https://wp-kama.ru/handbook/wordpress/papka-wp-content
