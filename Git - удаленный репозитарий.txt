@@ -1,6 +1,5 @@
 
-	kutaisoff@gmail.com
-	ElenaK07011989
+	
 	https://github.com/MaximusMini/OneRepoz.git
 	
 	1.Чтобы загрузить что-нибудь в удаленный репозиторий, сначала нужно к нему подключиться.
