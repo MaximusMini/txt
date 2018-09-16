@@ -1,0 +1,20 @@
+Yii2 - модель (вызов конструктора)
+
+      class MyClass extended Component
+          public $config;
+          public $params;
+
+          private $value1;
+          private $value2;
+
+          public $search;
+
+          public function __construct($search, $config = [])
+          {
+              this->$search = $search
+
+              this->value1 = someFunction1($search);
+              this->value2 = someFunction2($search);
+
+              parent::__construct($config);
+          }  
