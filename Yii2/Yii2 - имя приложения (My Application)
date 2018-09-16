@@ -1,0 +1,9 @@
+Yii2 - имя приложения (My Application)
+
+  По умолчанию в шаблоне имя приложения указано - Мy Application
+  
+  в шаблоне параметр прописан как - Yii::$app->name
+  
+  параметр name указан в файле \vendor\yiisoft\yii2\base\Application.php
+  
+    public $name = 'My Application';
