@@ -22,7 +22,12 @@ http://www.yiiframework.ru/forum/viewtopic.php?t=16584
 				$this->jsFiles[$position][$key] = Html::jsFile($url, $options);
 			}
 		
-		В исходниках yii2\web\view.php этот метод только position в $options = [] принимает position указывает в header или в конец body писать, по умолчинию в конец body. 
+		В исходниках yii2\web\view.php этот метод только position в $options = [] принимает position указывает в header или в конец body писать, по умолчинию в конец body.
+		
+		!!! -------ПЕРЕД jQuery --------
+		$this->registerJsFile( /web/js/jquery.3.1.0.min.js', ['position' => \yii\web\View::POS_HEAD]);
+		$this->registerJsFile('/web/js/jquery.photobox.js', ['position' => \yii\web\View::POS_HEAD]);
+		=============================================================================================
 
 
 		
