@@ -11,3 +11,4 @@ http://yiiframework.ru/forum/viewtopic.php?t=21545
 		нужно прописать ['depends' => ['app\assets\AppAsset']]
 	
 		$this->registerCssFile('static/theme/css/news.css', ['depends' => ['app\assets\AppAsset']]);
+		$this->registerCssFile('/web/css/blog.css',['depends' => ['app\assets\AppAsset']]);
