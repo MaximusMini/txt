@@ -51,6 +51,23 @@ url - 		По умолчанию: текущая страница.
 ОШИБКИ 
 	parsererror
 		одним из вариантов этой ошибки может быть несоответствие типв возвращаеиых данных типу указанному в параметре dataType
+
+// пример------------------------------------------
+function parsResults(){
+    $.ajax({
+        url:'',
+        data:'id_team=1',
+        type:'POST',
+        success:function(data, textStatus, jqXHR){
+            
+        },
+        error:function(jqXHR, srtErr, errorThrown){
+            // srtErr-строка описывающая тип произошедшей ошибки
+            alert('error: '+srtErr+' errorThrown: '+errorThrown);
+        }
+    });
+}
+//=================================================
 			
 			
 			
