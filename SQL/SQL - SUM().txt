@@ -1,0 +1,10 @@
+
+  SUM() — функция, возвращающая сумму значений столбца таблицы. 
+        Используется только для числовых столбцов.
+        
+      SQL SUM() имеет следующий синтаксис:
+          SUM ( [ALL | DISTINCT] expression )
+          
+      SELECT SUM(column_name)
+      FROM table_name
+      WHERE condition;
