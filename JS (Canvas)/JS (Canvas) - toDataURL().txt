@@ -1,0 +1,18 @@
+http://mpbox.ru/manuals/canvas/2D-api/toDataURL.html
+
+Метод toDataURL
+    Сохраняет в data url изображение нарисованное на холсте.
+
+    Синтаксис
+      canvas.toDataURL()
+
+    Результатом будет url PNG изображения закодированного в data url.
+    
+        var canvas = document.getElementById("picture");
+        var ctx = canvas.getContext("2d");
+        ctx.fillRect(10,10,20,20);
+        ctx.fillStyle = "green";
+        ctx.fillRect(40,40,20,20);
+
+        var scrImg = canvas.toDataURL();
+        alert(scrImg);
