@@ -20,7 +20,18 @@ $.ajax({
 	textStatus - 	строка со статусом выполнения
 	jqXHR	-  	объект jqXHR
   
-  
+  POST
+   $.ajax({
+	url: "save-poster",
+	data:{scrImg: scrImg},
+	type:"post",
+	success:function(data, textStatus, jqXHR){
+	    //alert('success');
+	},
+	error:function(jqXHR, srtErr, errorThrown){
+	    alert('error: '+srtErr+' errorThrown:'+errorThrown);
+	}    
+    });   
   
   
   // Функция вызывается если запрос закончится ошибкой.
