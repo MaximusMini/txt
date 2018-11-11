@@ -3,6 +3,9 @@ https://liblessons.ru/programming/framework-yii2/yii2-podklyuchit-skripty-v-head
 
 	Необходимо отредактировать файл подключение стилей и скриптов для соответствующего шаблона. Для этого переходим в папку assets и выбираем нужный нам файл (в моём случае он будет называться MyAsset)
 
+	// подключение JS
+	$this->registerJsFile('web/js/module5.js',['depends' => ['app\assets\AppAsset'],'position' => \yii\web\View::POS_HEAD]);
+	
 	Строка:
 		public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 	
