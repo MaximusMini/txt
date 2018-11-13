@@ -43,6 +43,12 @@
 		$ git remote
 		origin
 		paul
+	9. Принудительно перезаписать локальные файлы во время git pull
+		git pull origin master
+			если ошибка
+			error: Your local changes to the following files would be overwritten by merge:
+		git fetch --all
+		git reset --hard origin/master
 		
 		
 		
