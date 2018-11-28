@@ -1,0 +1,24 @@
+
+Запросы, сделанные к приложению, представлены в терминах yii\web\Request
+
+    Чтобы получить параметры запроса, нужно вызвать методы get() и post() компонента request
+    
+        $request = Yii::$app->request;
+        
+        $get = $request->get(); 
+        // эквивалентно: $get = $_GET;
+
+        $id = $request->get('id');   
+        // эквивалентно: $id = isset($_GET['id']) ? $_GET['id'] : null;
+
+        $id = $request->get('id', 1);   
+        // эквивалентно: $id = isset($_GET['id']) ? $_GET['id'] : 1;
+
+        $post = $request->post(); 
+        // эквивалентно: $post = $_POST;
+
+        $name = $request->post('name');   
+        // эквивалентно: $name = isset($_POST['name']) ? $_POST['name'] : null;
+
+        $name = $request->post('name', '');   
+        // эквивалентно: $name = isset($_POST['name']) ? $_POST['name'] : '';
