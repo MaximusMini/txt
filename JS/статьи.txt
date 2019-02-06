@@ -1,3 +1,25 @@
 
 Шпаргалка по современному JavaScript
     https://tproger.ru/translations/javascript-cheatsheet/
+
+Moment.js и другие JS-библиотеки, которые надо знать в 2019 году
+    https://techrocks.ru/2019/02/03/momentjs-and-other-js-libraries-for-2019/
+
+CodeDojo Live - Знакомство с библиотекой video.js
+    https://www.youtube.com/watch?v=8JXgXFknmZM
+    
+
+
+
+Цена композиции в Javascript-мире
+    https://habr.com/ru/post/438404/
+    
+JS-битва: как я написал свой eval()
+    https://habr.com/ru/company/jugru/blog/436586/
+
+
+
+
+Brain.js — это мощная open-source библиотека для работы с нейронными сетями в JavaScript.
+WOW.js — это легковесная (3kb) библиотека, с помощью которой можно создать классные анимации при скролле страницы.
+
