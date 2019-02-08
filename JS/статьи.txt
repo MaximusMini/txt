@@ -7,7 +7,9 @@ Moment.js и другие JS-библиотеки, которые надо зн�
 
 CodeDojo Live - Знакомство с библиотекой video.js
     https://www.youtube.com/watch?v=8JXgXFknmZM
-    
+
+JavaScript: топ тем и фреймворков для изучения в 2019 году
+    https://medium.com/web-standards/top-js-2019-1116718b2b67
 
 
 
